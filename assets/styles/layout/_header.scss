@@ -3,5 +3,37 @@
   background-image: url(../images/Beach-and-eBook.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 60%;
+  background-position-y: 55%;
+
+  .landing {
+    font-family: "Poppins", sans-serif;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 7%;
+
+    .sub-heading {
+      font-weight: 500;
+      font-size: 2rem;
+      color: #291653;
+      overflow: hidden;
+      padding-bottom: 1em;
+      text-align: left;
+
+      .typed-text {
+        color: #9e3155;
+        font-size: 2rem;
+      }
+
+      .cursor {
+        display: inline-block;
+        background-color: #9e3155;
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+    }
+  }
 }

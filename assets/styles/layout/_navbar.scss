@@ -1,9 +1,38 @@
-// $color-primary: red;
-
 .navbar {
-  background-color: $color-primary;
+  @include flex-row;
+  // justify-content: space-around;
+  height: 8vh;
+  background-color: rgba($color: $color-primary, $alpha: 0.7);
   align-items: center;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 3;
+
+  &__logo,
+  &__faq,
+  &__signup,
+  &__login {
+    font-size: $default-font-size;
+    letter-spacing: 0.5rem;
+    transition: all 0.1s ease-in-out;
+    margin: 0 3vw;
+    a {
+      text-decoration: none;
+      color: $color-white;
+    }
+
+    &:hover {
+      transform: translateY(-0.1rem);
+    }
+  }
+
+  &__logo {
+    width: 50%;
+  }
+  &__options {
+    width: 50%;
+    @include flex-row;
+    justify-content: space-around;
+  }
 }
