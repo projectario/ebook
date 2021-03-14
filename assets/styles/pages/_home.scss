@@ -1,3 +1,60 @@
-.header {
-  background-color: darkorange;
+body {
+  background-color: #e3eff5;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 50px auto;
+
+  .sectionHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px;
+  }
+
+  .genreOptionsList {
+    @include flex-row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    // background-color: rgb(235, 217, 234);
+
+    .genreCard {
+      text-decoration: none;
+      width: 32%;
+      height: 250px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background-size: cover;
+
+      &_Fantasy {
+        background-image: url("/images/gerneList/Fantasy2.jpg");
+      }
+      &_Romance {
+        background-image: url("/images/gerneList/romance1.jpg");
+      }
+      &_Action {
+        background-image: url("/images/gerneList/action1.jpg");
+      }
+      &_SciFi {
+        background-image: url("/images/gerneList/SCI_FI.jpg");
+      }
+      &_Mystery {
+        background-image: url("/images/gerneList/mysterySmall.jpg");
+      }
+      &_Childer {
+        background-image: url("/images/gerneList/comics.jpg");
+      }
+
+      .genreTitle {
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.9rem;
+        color: white;
+        background-color: rgba(85, 85, 85, 0.562);
+        border-radius: 10px 10px 0 0;
+      }
+    }
+  }
 }
