@@ -29,7 +29,8 @@ module.exports.routes = {
   // logout
   'GET /logout': { action: 'account/logout' },
   //chat
-  
+  'GET /chat': { action: 'chat' },
+  'POST /chat': { action: 'chatpage' }
 
   /***************************************************************************
   *                                                                          *
