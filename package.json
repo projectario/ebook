@@ -10,11 +10,13 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "bcryptjs": "^2.4.3",
     "grunt": "1.0.4",
+    "grunt-contrib-sass": "^2.0.0",
     "sails": "^1.4.0",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^3.0.1",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mysql": "^1.0.1"
+    "sails-mysql": "^1.0.1",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "eslint": "5.16.0"

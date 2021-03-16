@@ -17,27 +17,15 @@ module.exports = {
     price: { type: 'number' },
     description: { type: 'string' },
     language: { type: 'string' },
-    releasedDate: { type: 'number' },
+    releasedYear: { type: 'number' },
     rating: { type: 'number' },
     isBestseller: { type: 'boolean' },
+    isEditorChoice: { type: 'boolean' },
     coverUrl: { type: 'string' },
     purchases: {
       collection: 'Purchase',
       via: 'bookId',
     }
-
-
-
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
 
