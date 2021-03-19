@@ -20,7 +20,17 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-
+  // login
+  'GET /login': { action: 'entrance/view-login' },
+  'POST /login': { action: 'entrance/login' },
+  // signup
+  'GET /signup': { action: 'entrance/view-signup' },
+  'POST /signup': { action: 'entrance/signup' },
+  // logout
+  'GET /logout': { action: 'account/logout' },
+  //chat
+  'GET /chat': { action: 'chat' },
+  'POST /chat': { action: 'chat' }
 
   /***************************************************************************
   *                                                                          *
