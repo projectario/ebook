@@ -1,0 +1,13 @@
+.bookCard {
+  width: 220px;
+  height: 420px;
+  //   border: 1px solid red;
+  box-sizing: border-box;
+  margin: 20px 10px;
+
+  .bookTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+  }
+}
