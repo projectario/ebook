@@ -32,11 +32,6 @@
     }
   }
 
-  // .navbar__search {
-  //   color: #291653;
-  //   // font-weight: bolder;
-  // }
-
   .searchBook {
     background-color: rgba(255, 255, 255, 0.342);
     width: 250px;
@@ -45,7 +40,7 @@
     border-radius: 10px;
     font-size: 1.3rem;
     padding: 5px 10px;
-    color: #291653;
+    color: $color-Purple;
 
     &:placeholder-shown {
       font-size: 1.3rem;
