@@ -21,8 +21,7 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    firstName: { type: 'string' },
-    lastName: { type: 'string' },
+    username: { type: 'string' },
     email: { type: 'string' },
     password: { type: 'string' },
     purchases: {

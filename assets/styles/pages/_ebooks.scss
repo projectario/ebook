@@ -1,0 +1,86 @@
+.eBooksHeader {
+  height: 30vh;
+  background-image: url(../images/istock-584503712-1024x683.jpg);
+  // background-image: linear-gradient(
+  //   180deg,
+  //   rgba($color-white, 0.3),
+  //   rgba($color-primary, 0.1)
+  // );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 40%;
+}
+
+.eBooksContainer {
+  @include flex-row;
+  margin: 20px auto;
+  max-width: 1500px;
+
+  .browseBooks {
+    .sectionHeader {
+      @include sectionHeader;
+    }
+    .searchResults {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.optionsMenu {
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.116);
+  border-radius: 10px;
+  margin: 15px;
+  padding: 25px;
+  font-size: 1.4rem;
+  font-family: $font-primary;
+  height: 100%;
+
+  &__option {
+    margin-bottom: 20px;
+  }
+
+  .genre__sellection {
+    width: 100%;
+    font-size: 1.4rem;
+    font-family: $font-primary;
+  }
+
+  .range-wrap {
+    position: relative;
+    margin: 10px;
+
+    .range {
+      width: 100%;
+    }
+    .bubble {
+      background: $color-myBlue;
+      color: white;
+      padding: 5px;
+      position: absolute;
+      border-radius: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bubble::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: $color-myBlue;
+      top: -1px;
+      left: 50%;
+    }
+  }
+
+  &__btn {
+    background-color: $color-myBlue;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}

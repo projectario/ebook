@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+
   // login
   'GET /login': { action: 'entrance/view-login' },
   'POST /login': { action: 'entrance/login' },
@@ -31,6 +32,10 @@ module.exports.routes = {
   //chat
   'GET /chat': { action: 'chat' },
   'POST /chat': { action: 'chat' }
+
+  'GET /ebooks': { view: 'pages/ebooks' },
+
+
 
   /***************************************************************************
   *                                                                          *
