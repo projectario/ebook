@@ -1,11 +1,4 @@
-<div class="navbar">
-  <div class="navbar__logo"><a href="/">eBook</a></div>
-  <div class="navbar__options">
-    <div class="navbar__faq"><a href="/">FAQ</a></div>
-    <div class="navbar__signup"><a href="/">Sign Up</a></div>
-    <div class="navbar__login"><a href="/logout">Log In</a></div>
-  </div>
-</div>
+<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
 
 <header class="header">
   <div class="landing">
@@ -17,10 +10,10 @@
   </div>
 </header>
 
-<main class="container">
+<main class="homeContainer">
   <section class="genreOptions">
     <h3 class="sectionHeader">BROWSE GENRES</h3>
-    <div class="container_Section genreOptionsList">
+    <div class="homeContainer_Section genreOptionsList">
       <a class="genreCard genreCard_Fantasy" href="">
         <h4 class="genreTitle">FANTASY</h4>
       </a>
@@ -52,14 +45,44 @@
   </section>
 
   <section class="bestSellers">
-    <h3 class="sectionHeader">BEST SELLERS</h3>
-    <div class="container_Section">
-      <div class="bookCard"></div>
+    <h3 class="sectionHeader"><i class="fas fa-star"></i> BEST SELLERS</h3>
+    <div class="homeContainer_Section">
+      <!-- an eBook to repeat -->
+      <% for(i=0; i<10; i++) {%>
+      <div class="bookCard">
+        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
+        <p class="bookTitle">A Shifter's Curse</p>
+        <p class="bookAuthor">Raven Steele</p>
+        <div class="bookDetails">
+          <span class="bookRating">Rating: 4.5</span>
+          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
+          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
+        </div>
+      </div>
+      <% } %>
+      <!-- end of ebook -->
     </div>
   </section>
 
   <section class="editorsChoise">
-    <h3 class="sectionHeader">EDITOR'S CHOICE</h3>
-    <div class="container_Section"></div>
+    <h3 class="sectionHeader">
+      <i class="fas fa-bookmark"></i> EDITOR'S CHOICE
+    </h3>
+    <div class="homeContainer_Section">
+      <!-- an eBook to repeat -->
+      <% for(i=0; i<10; i++) {%>
+      <div class="bookCard">
+        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
+        <p class="bookTitle">A Shifter's Curse</p>
+        <p class="bookAuthor">Raven Steele</p>
+        <div class="bookDetails">
+          <span class="bookRating">Rating: 4.5</span>
+          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
+          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
+        </div>
+      </div>
+      <% } %>
+      <!-- end of ebook -->
+    </div>
   </section>
 </main>
