@@ -2,17 +2,12 @@ body {
   background-color: #e3eff5;
 }
 
-.container {
+.homeContainer {
   max-width: 1350px;
   margin: 50px auto;
 
   .sectionHeader {
-    font-family: arial, fantasy;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #291653;
-    margin: 20px;
+    @include sectionHeader;
   }
 
   &_Section {

@@ -1,0 +1,35 @@
+<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
+
+<header class="eBooksHeader">
+  <div class="landing">
+    <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
+    <!-- <h3 class="sub-heading">
+      eBook means <span class="typed-text"></span
+      ><span class="cursor">&nbsp;</span>
+    </h3> -->
+  </div>
+</header>
+
+<div class="eBooksContainer">
+  <aside class="optionsMenu"></aside>
+
+  <main class="browseBooks">
+    <h3 class="sectionHeader">SEARCH RESULTS</h3>
+    <div class="searchResults">
+      <!-- an eBook to repeat -->
+      <% for(i=0; i<10; i++) {%>
+      <div class="bookCard">
+        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
+        <p class="bookTitle">A Shifter's Curse</p>
+        <p class="bookAuthor">Raven Steele</p>
+        <div class="bookDetails">
+          <span class="bookRating">Rating: 4.5</span>
+          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
+          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
+        </div>
+      </div>
+      <% } %>
+      <!-- end of ebook -->
+    </div>
+  </main>
+</div>

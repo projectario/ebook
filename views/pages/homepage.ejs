@@ -1,31 +1,4 @@
-<head>
-  <link
-    rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-    crossorigin="anonymous"
-  />
-  <link rel="manifest" href="/site.webmanifest" />
-</head>
-<div class="navbar">
-  <div class="navbar__logo">
-    <a href="/"><i class="fas fa-atlas"></i>eBook</a>
-  </div>
-  <form class="navbar__search">
-    <input
-      type="text"
-      name="searchBook"
-      class="searchBook"
-      placeholder="Search..."
-    />
-    <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
-  </form>
-  <div class="navbar__options">
-    <div class="navbar__faq"><a href="/">FAQ</a></div>
-    <div class="navbar__signup"><a href="/">Sign Up</a></div>
-    <div class="navbar__login"><a href="/logout">Log In</a></div>
-  </div>
-</div>
+<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
 
 <header class="header">
   <div class="landing">
@@ -37,10 +10,10 @@
   </div>
 </header>
 
-<main class="container">
+<main class="homeContainer">
   <section class="genreOptions">
     <h3 class="sectionHeader">BROWSE GENRES</h3>
-    <div class="container_Section genreOptionsList">
+    <div class="homeContainer_Section genreOptionsList">
       <a class="genreCard genreCard_Fantasy" href="">
         <h4 class="genreTitle">FANTASY</h4>
       </a>
@@ -72,8 +45,8 @@
   </section>
 
   <section class="bestSellers">
-    <h3 class="sectionHeader">BEST SELLERS</h3>
-    <div class="container_Section">
+    <h3 class="sectionHeader"><i class="fas fa-star"></i> BEST SELLERS</h3>
+    <div class="homeContainer_Section">
       <!-- an eBook to repeat -->
       <% for(i=0; i<10; i++) {%>
       <div class="bookCard">
@@ -92,8 +65,10 @@
   </section>
 
   <section class="editorsChoise">
-    <h3 class="sectionHeader">EDITOR'S CHOICE</h3>
-    <div class="container_Section">
+    <h3 class="sectionHeader">
+      <i class="fas fa-bookmark"></i> EDITOR'S CHOICE
+    </h3>
+    <div class="homeContainer_Section">
       <!-- an eBook to repeat -->
       <% for(i=0; i<10; i++) {%>
       <div class="bookCard">

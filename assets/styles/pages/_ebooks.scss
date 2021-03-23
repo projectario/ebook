@@ -1,0 +1,36 @@
+.eBooksHeader {
+  height: 30vh;
+  background-image: url(../images/istock-584503712-1024x683.jpg);
+  // background-image: linear-gradient(
+  //   180deg,
+  //   rgba($color-white, 0.3),
+  //   rgba($color-primary, 0.1)
+  // );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 40%;
+}
+
+.eBooksContainer {
+  @include flex-row;
+  margin: 20px auto;
+  max-width: 1500px;
+  background-color: coral;
+
+  .optionsMenu {
+    // width: 30%;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.116);
+  }
+
+  .browseBooks {
+    .sectionHeader {
+      @include sectionHeader;
+    }
+    .searchResults {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
