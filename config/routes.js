@@ -36,6 +36,22 @@ module.exports.routes = {
   'GET /ebooks': { view: 'pages/ebooks' },
 
 
+  //Account settings 
+  'GET /account': { action: 'account/account-settings' },
+
+  //Update password
+  'GET /account/password': { action: 'account/settings/view-edit-password' },
+  'POST /account/password': { action: 'account/settings/update-password' },
+
+  //Update email 
+  'GET /account/email': { action: 'account/settings/view-edit-email' },
+  'POST /account/email': { action: 'account/settings/update-email' },
+
+  //Update name 
+  'GET /account/name': { action: 'account/settings/view-edit-name' },
+  'POST /account/name': { action: 'account/settings/update-name' },
+
+
 
   /***************************************************************************
   *                                                                          *
