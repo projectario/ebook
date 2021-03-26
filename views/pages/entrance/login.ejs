@@ -1,10 +1,10 @@
 <%- partial('../../partials/head.ejs') %> <%-
 partial('../../partials/navbar.ejs') %>
 
-<main class="signup-page">
-  <section class="form__container-login">
-    <form action="" method="POST" class="form__container-login--form">
-      <h4 class="heading-secondary">Login</h4>
+<main class="login-page">
+  <section class="form__container">
+    <form action="" method="POST" class="form login">
+      <h4 class="formHeader">LOGIN</h4>
       <input
         id="email"
         name="email"
@@ -24,7 +24,6 @@ partial('../../partials/navbar.ejs') %>
         required
       />
       <p class="heading-secondary error"></p>
-      <a href="" class="btn btn-text">Forgot Password?</a>
       <button class="btn btn-form">Login</button>
     </form>
   </section>
