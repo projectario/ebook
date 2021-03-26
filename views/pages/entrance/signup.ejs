@@ -1,35 +1,72 @@
-<nav class="navbar">
-  <div class="navbar__logo"><a href="/">VideoClub</a></div>
-  <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-  <div class="navbar__login"><a href="/login">Login</a></div>
-</nav>
+<%- partial('../../partials/head.ejs') %> <%-
+partial('../../partials/navbar.ejs') %>
+
 <main class="signup-page">
   <section class="form__container">
     <div class="form__image form__image-adult"></div>
 
-    <form action="" method="POST" class="form__container-form">
-      <div class="checkbox__container">
-        <label for="age" class="heading-secondary">Kids Account</label>
-        <input type="checkbox" class='checkbox__box' id='age' name="isKid" value="true">
-      </div>
-      <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name" pattern="[A-Za-z]{1,15}"
-        minlength="3" maxlength="15" required title="Please fill out the field with 3-15 characters and no numbers"
-        oninput="validateName()" />
-      <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name" pattern="[A-Za-z]{1,15}"
-        minlength="3" maxlength="15" required title="Please fill out the field with 3-15 characters and no numbers"
-        oninput="validateLastName()" />
-      <input id="email" name="email" class="input" type="email" placeholder="E-Mail Address"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninput="validateEMail()" />
-      <input id="password" name="password" class="input" type="password" placeholder="Password"
+    <form action="" method="POST" class="form login">
+      <h4 class="formHeader">Sign Up</h4>
+      <input
+        id="firstName"
+        name="firstName"
+        class="input"
+        type="text"
+        placeholder="First Name"
+        pattern="[A-Za-z]{1,15}"
+        minlength="3"
+        maxlength="15"
+        required
+        title="Please fill out the field with 3-15 characters and no numbers"
+        oninput="validateName()"
+      />
+      <input
+        id="lastName"
+        name="lastName"
+        class="input"
+        type="text"
+        placeholder="Last Name"
+        pattern="[A-Za-z]{1,15}"
+        minlength="3"
+        maxlength="15"
+        required
+        title="Please fill out the field with 3-15 characters and no numbers"
+        oninput="validateLastName()"
+      />
+      <input
+        id="email"
+        name="email"
+        class="input"
+        type="email"
+        placeholder="E-Mail Address"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required
+        oninput="validateEMail()"
+      />
+      <input
+        id="password"
+        name="password"
+        class="input"
+        type="password"
+        placeholder="Password"
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-        required oninput="validatePassword()" />
-      <input id="confirmPassword" name="confirmPassword" class="input" type="password" placeholder="Confirm Password"
+        required
+        oninput="validatePassword()"
+      />
+      <input
+        id="confirmPassword"
+        name="confirmPassword"
+        class="input"
+        type="password"
+        placeholder="Confirm Password"
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-        required oninput="validateConfirmPassword()" />
+        required
+        oninput="validateConfirmPassword()"
+      />
       <p class="heading-secondary error"></p>
-      <button class="btn btn-form">Sign Up!</button>
+      <button class="btn btn-form">Sign Up</button>
     </form>
   </section>
 </main>
