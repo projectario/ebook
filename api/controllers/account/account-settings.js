@@ -20,9 +20,9 @@ module.exports = {
 
 
     fn: async function () {
-        let sessionUserId = this.req.session.userId;
+        // let sessionUserId = this.req.session.userId;
 
-        if (sessionUserId == undefined) throw { redirect: '/login' }
+        // if (sessionUserId == undefined) throw { redirect: '/login' }
 
         return {};
 

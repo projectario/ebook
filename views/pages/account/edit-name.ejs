@@ -1,31 +1,17 @@
-<head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
-</head>
-<nav class="navbar">
-    <div class="navbar__logo"><a href="/">VideoClub</a></div>
-    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-    <div class="navbar__chat"><a href="/chat">Chat</a></div>
-    <div class="navbar__user"><a href="/"><i class="far fa-user"></i>
-
-        </a>
-    </div>
-    <div class="navbar__login"><a href="/logout">Logout</a></div>
-</nav>
-<main class="signup-page">
-    <section class="form__container">
-        <form action="/account/name" method="POST" class="form__container-form">
-            <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name"
-                pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                title="Please fill out the field with 3-15 characters and no numbers" oninput="validateName()" />
-            <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name"
-                pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                title="Please fill out the field with 3-15 characters and no numbers" oninput="validateLastName()" />
-            <button class="btn btn-form">Update Personal Info</button>
-        </form>
-    </section>
-</main>
+<%- partial('../../partials/head.ejs') %>
+    <%- partial('../../partials/navbar.ejs') %>
+        <main class="signup-page">
+            <section class="form__container">
+                <form action="/account/name" method="POST" class="form">
+                    <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name"
+                        pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
+                        title="Please fill out the field with 3-15 characters and no numbers"
+                        oninput="validateName()" />
+                    <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name"
+                        pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
+                        title="Please fill out the field with 3-15 characters and no numbers"
+                        oninput="validateLastName()" />
+                    <button class="btn btn-form">Update Personal Info</button>
+                </form>
+            </section>
+        </main>

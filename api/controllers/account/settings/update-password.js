@@ -42,7 +42,7 @@ module.exports = {
                 await User.updateOne({ id: userId })
                     .set({ password: changedPassword });
                 delete this.req.session.userId;
-                return { redirect: '/login', };
+                throw { redirect: '/login', };
             }
         } else {
 
