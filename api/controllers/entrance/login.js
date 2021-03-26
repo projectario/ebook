@@ -53,7 +53,7 @@ module.exports = {
         this.req.session.userId = user.id;
         if (user.isKid) throw { redirect: '/kidsmovies' }
 
-        throw { redirect: '/movies' }
+        throw { redirect: '/ebooks' }
       }
 
       else {

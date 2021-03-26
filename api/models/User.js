@@ -8,7 +8,6 @@
 module.exports = {
   tableName: 'users',
   attributes: {
-
     firstName: { type: 'string' },
     lastName: { type: 'string' },
     email: { type: 'string' },
