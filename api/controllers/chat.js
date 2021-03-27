@@ -16,12 +16,12 @@ module.exports = {
   
       loginPage: {
         responseType: 'view',
-        viewTemplatePath: 'login'
+        viewTemplatePath: 'pages/entrance/login'
       },
   
       chatPage: {
         responseType: 'view',
-        viewTemplatePath: 'chat'
+        viewTemplatePath: 'pages/chat/chat'
       }
   
     },
@@ -54,10 +54,25 @@ module.exports = {
           return exits.loginPage({});
         }
   
+        ChatMessage.create({
+          text: user.firstName + ' joined the room.'
+        })
+        .meta({fetch: true})
+        .exec(function(err, message) {
+          if (err) { return exits.serverError(err); }
+          // Blast the message to all connected sockets.
+          sails.sockets.blast('chatmessage', {
+            verb: 'created',
+            id: message.id,
+            data: {
+              text: message.text
+            }
+          });
+        });
         // Looks like this is a valid, logged-in, online user, so show the chat page.
         return exits.chatPage({
           loggedInUserId: env.req.session.userId,
-          username: user.username
+          username: user.firstName
         });
       });
   

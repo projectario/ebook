@@ -12,6 +12,7 @@ module.exports = {
     lastName: { type: 'string' },
     email: { type: 'string' },
     password: { type: 'string' },
+    online: { type: 'boolean' },
     purchases: {
       collection: 'Purchase',
       via: 'userId',
