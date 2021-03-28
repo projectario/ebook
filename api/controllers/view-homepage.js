@@ -1,23 +1,17 @@
 module.exports = {
 
 
-  friendlyName: 'View login',
+  friendlyName: 'View homepage',
 
 
-  description: 'Display "Login" page.',
+  description: 'Display "" page.',
 
 
   exits: {
 
     success: {
-      viewTemplatePath: 'pages/entrance/login',
-    },
-
-    redirect: {
-      description: 'The requesting user is already logged in.',
-      responseType: 'redirect'
+      viewTemplatePath: 'pages/homepage'
     }
-
 
   },
 

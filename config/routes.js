@@ -19,7 +19,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { action: 'view-homepage' },
 
   // login
   'GET /login': { action: 'entrance/view-login' },
@@ -31,9 +31,8 @@ module.exports.routes = {
   'GET /logout': { action: 'account/logout' },
   //chat
   'GET /chat': { action: 'chat' },
-  'POST /chat': { action: 'chat' },
 
-  'GET /ebooks': { view: 'pages/ebooks' },
+  'GET /ebooks': { action: 'view-ebooks' },
 
 
   //Account settings 
