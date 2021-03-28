@@ -1,28 +1,23 @@
 module.exports = {
 
 
-  friendlyName: 'View login',
+  friendlyName: 'View e book',
 
 
-  description: 'Display "Login" page.',
+  description: 'Display "E book" page.',
 
 
   exits: {
 
     success: {
-      viewTemplatePath: 'pages/entrance/login',
-    },
-
-    redirect: {
-      description: 'The requesting user is already logged in.',
-      responseType: 'redirect'
+      viewTemplatePath: 'pages/eBooks'
     }
-
 
   },
 
 
   fn: async function () {
+
 
     let user = null;
     if (this.req.session.userId) {
@@ -31,7 +26,6 @@ module.exports = {
     }
     // Respond with view.
     return { user };
-
   }
 
 
