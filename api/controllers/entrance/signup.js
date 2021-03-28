@@ -14,7 +14,6 @@ module.exports = {
     email: { type: 'string' },
     password: { type: 'string' },
     confirmPassword: { type: 'string', required: true },
-    isKid: { type: 'boolean', },
   },
 
 
@@ -28,15 +27,14 @@ module.exports = {
   },
 
 
-  fn: async function ({ firstName, lastName, email, password, confirmPassword, isKid }) {
+  fn: async function ({ firstName, lastName, email, password, confirmPassword}) {
     sails.log(firstName, lastName, email, password, confirmPassword, isKid);
-    this.email = email.toLowerCase(); // this propably works
+    this.email = email.toLowerCase().trim(); // this propably works
     var isUser = await User.findOne({ email: email });
     if (isUser) throw { problem: '<h2> Email already in use! </h2>' }
     else {
       if (password === confirmPassword) {
-        let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12), isKid })
-        // if (isKid) throw {redirect: '/login'} // makes no difference in the code as it is, but is needed if we login the user right after signup
+        let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12)})
         throw { redirect: '/login' };
       }
       else {
