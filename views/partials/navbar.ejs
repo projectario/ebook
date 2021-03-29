@@ -3,19 +3,23 @@
     <a href="/"><i class="fas fa-atlas"></i>eBook</a>
   </div>
   <form class="navbar__search">
-    <input type="text" name="searchBook" class="searchBook" placeholder="Search..." />
+    <input
+      type="text"
+      name="searchBook"
+      class="searchBook"
+      placeholder="Search by title..."
+    />
     <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
   </form>
   <div class="navbar__options">
     <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-    <% if ( user === null)  {%>
+    <% if ( user === null) {%>
     <div class="navbar__signup"><a href="/signup">Sign Up</a></div>
     <div class="navbar__login"><a href="/login">Log In</a></div>
     <% } else { %>
-    <div class="navbar__login"><a href="#"> <%= user.firstName %>  </a></div>
+    <div class="navbar__login"><a href="#"> <%= user.firstName %> </a></div>
     <div class="navbar__signup"><a href="/logout">Logout</a></div>
 
     <% } %>
-
   </div>
 </div>
