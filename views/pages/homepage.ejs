@@ -1,90 +1,108 @@
+<%- partial('../partials/head.ejs') %>
+  <%- partial('../partials/navbar.ejs') %>
 
-<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
 
-
-<header class="header">
-  <div class="landing">
-    <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
-    <h3 class="sub-heading">
-      eBook means <span class="typed-text"></span
-      ><span class="cursor">&nbsp;</span>
-    </h3>
-  </div>
-</header>
-
-<main class="homeContainer">
-  <section class="genreOptions">
-    <h3 class="sectionHeader">BROWSE GENRES</h3>
-    <div class="homeContainer_Section genreOptionsList">
-      <a class="genreCard genreCard_Fantasy" href="">
-        <h4 class="genreTitle">FANTASY</h4>
-      </a>
-      <a class="genreCard genreCard_Romance" href="">
-        <h4 class="genreTitle">ROMANCE</h4>
-      </a>
-      <a class="genreCard genreCard_Action" href="">
-        <h4 class="genreTitle">ACTION & ADVENTURE</h4>
-      </a>
-      <a class="genreCard genreCard_SciFi" href="">
-        <h4 class="genreTitle">SCIENCE FICTION</h4>
-      </a>
-      <a class="genreCard genreCard_Mystery" href="">
-        <h4 class="genreTitle">MYSTERY</h4>
-      </a>
-      <a class="genreCard genreCard_Childer" href="">
-        <h4 class="genreTitle">CHILDREN'S & COMICS</h4>
-      </a>
-      <a class="genreCard genreCard_Thriller" href="">
-        <h4 class="genreTitle">THRILLER & SUSPENSE</h4>
-      </a>
-      <a class="genreCard genreCard_History" href="">
-        <h4 class="genreTitle">HISTORY</h4>
-      </a>
-      <a class="genreCard genreCard_Educational" href="">
-        <h4 class="genreTitle">EDUCATIONAL</h4>
-      </a>
-    </div>
-  </section>
-
-  <section class="bestSellers">
-    <h3 class="sectionHeader"><i class="fas fa-star"></i> BEST SELLERS</h3>
-    <div class="homeContainer_Section">
-      <!-- an eBook to repeat -->
-      <% for(i=0; i<10; i++) {%>
-      <div class="bookCard">
-        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
-        <p class="bookTitle">A Shifter's Curse</p>
-        <p class="bookAuthor">Raven Steele</p>
-        <div class="bookDetails">
-          <span class="bookRating">Rating: 4.5</span>
-          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
-          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
-        </div>
+    <header class="header">
+      <div class="landing">
+        <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
+        <h3 class="sub-heading">
+          eBook means <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+        </h3>
       </div>
-      <% } %>
-      <!-- end of ebook -->
-    </div>
-  </section>
+    </header>
 
-  <section class="editorsChoise">
-    <h3 class="sectionHeader">
-      <i class="fas fa-bookmark"></i> EDITOR'S CHOICE
-    </h3>
-    <div class="homeContainer_Section">
-      <!-- an eBook to repeat -->
-      <% for(i=0; i<10; i++) {%>
-      <div class="bookCard">
-        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
-        <p class="bookTitle">A Shifter's Curse</p>
-        <p class="bookAuthor">Raven Steele</p>
-        <div class="bookDetails">
-          <span class="bookRating">Rating: 4.5</span>
-          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
-          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
+    <main class="homeContainer">
+      <section class="genreOptions">
+        <h3 class="sectionHeader">BROWSE GENRES</h3>
+        <div class="homeContainer_Section genreOptionsList">
+          <a class="genreCard genreCard_Fantasy" href="">
+            <h4 class="genreTitle">FANTASY</h4>
+          </a>
+          <a class="genreCard genreCard_Romance" href="">
+            <h4 class="genreTitle">ROMANCE</h4>
+          </a>
+          <a class="genreCard genreCard_Action" href="">
+            <h4 class="genreTitle">ACTION & ADVENTURE</h4>
+          </a>
+          <a class="genreCard genreCard_SciFi" href="">
+            <h4 class="genreTitle">SCIENCE FICTION</h4>
+          </a>
+          <a class="genreCard genreCard_Mystery" href="">
+            <h4 class="genreTitle">MYSTERY</h4>
+          </a>
+          <a class="genreCard genreCard_Childer" href="">
+            <h4 class="genreTitle">CHILDREN'S & COMICS</h4>
+          </a>
+          <a class="genreCard genreCard_Thriller" href="">
+            <h4 class="genreTitle">THRILLER & SUSPENSE</h4>
+          </a>
+          <a class="genreCard genreCard_History" href="">
+            <h4 class="genreTitle">HISTORY</h4>
+          </a>
+          <a class="genreCard genreCard_Educational" href="">
+            <h4 class="genreTitle">EDUCATIONAL</h4>
+          </a>
         </div>
-      </div>
-      <% } %>
-      <!-- end of ebook -->
-    </div>
-  </section>
-</main>
+      </section>
+
+      <section class="bestSellers">
+        <h3 class="sectionHeader"><i class="fas fa-star"></i> BEST SELLERS</h3>
+        <div class="homeContainer_Section">
+          <!-- an eBook to repeat -->
+          <% for(let i=0; i<listOfBooks.length; i++) {%>
+            <% if(listOfBooks[i].isBestseller) {%>
+              <div class="bookCard">
+                <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %> " alt="" />
+                <p class="bookTitle">
+                  <%= listOfBooks[i].title %>
+                </p>
+                <p class="bookAuthor">
+                  <%= listOfBooks[i].author %>
+                </p>
+                <div class="bookDetails">
+                  <span class="bookRating">Rating: <%= listOfBooks[i].rating %></span>
+                  <span class="bookBS">
+                    <%if(listOfBooks[i].isBestseller) {%>
+                      <i class="fas fa-star"></i>
+                      <% } %>
+                  </span>
+                </div>
+              </div>
+              <% } %>
+                <% } %>
+
+                  <!-- end of ebook -->
+        </div>
+      </section>
+
+      <section class="editorsChoise">
+        <h3 class="sectionHeader">
+          <i class="fas fa-bookmark"></i> EDITOR'S CHOICE
+        </h3>
+        <div class="homeContainer_Section">
+          <!-- an eBook to repeat -->
+          <% for(let i=0; i<listOfBooks.length; i++) {%>
+            <% if(listOfBooks[i].isEditorChoice) {%>
+              <div class="bookCard">
+                <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %> " alt="" />
+                <p class="bookTitle">
+                  <%= listOfBooks[i].title %>
+                </p>
+                <p class="bookAuthor">
+                  <%= listOfBooks[i].author %>
+                </p>
+                <div class="bookDetails">
+                  <span class="bookRating">Rating: <%= listOfBooks[i].rating %></span>
+                  <span class="bookBS">
+                    <%if(listOfBooks[i].isEditorChoice) {%>
+                      <i class="fas fa-bookmark"></i>
+                      <% } %>
+                  </span>
+                </div>
+              </div>
+              <% } %>
+                <% } %>
+                  <!-- end of ebook -->
+        </div>
+      </section>
+    </main>
