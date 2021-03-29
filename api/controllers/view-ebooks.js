@@ -1,7 +1,7 @@
 module.exports = {
 
 
-  friendlyName: 'View e book',
+  friendlyName: 'View books',
 
 
   description: 'Display "E book" page.',
