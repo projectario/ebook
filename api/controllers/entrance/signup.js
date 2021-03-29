@@ -27,20 +27,20 @@ module.exports = {
   },
 
 
-  fn: async function ({ firstName, lastName, email, password, confirmPassword}) {
+  fn: async function ({ firstName, lastName, email, password, confirmPassword }) {
     sails.log(firstName, lastName, email, password, confirmPassword, isKid);
     this.email = email.toLowerCase().trim(); // this propably works
     var isUser = await User.findOne({ email: email });
     if (isUser) throw { problem: '<h2> Email already in use! </h2>' }
+
+    if (password === confirmPassword) {
+      let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12) })
+      throw { redirect: '/login' };
+    }
     else {
-      if (password === confirmPassword) {
-        let newUser = await User.create({ firstName, lastName, email, password: await bcrypt.hash(password, 12)})
-        throw { redirect: '/login' };
-      }
-      else {
-        throw { problem: '<h1>Passwords not match!!!</h1>' }
-      }
+      throw { problem: '<h1>Passwords not match!!!</h1>' }
     }
   }
+
 
 };
