@@ -35,13 +35,12 @@ module.exports = {
     if (genre == 'All' || genre == undefined) {
       listOfBooks = await Book.find().meta({ skipRecordVerification: true });
 
-      // } else {
-      //   listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
+    } else {
+      listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
 
-      // }
-      return { listOfBooks, genre, user };
     }
-
-
+    return { listOfBooks, genre, user };
   }
+
+
 }
