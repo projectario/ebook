@@ -10,6 +10,12 @@ module.exports = {
   inputs: {
     genre: {
       type: 'string',
+    },
+    isBestseller: {
+      type: 'boolean'
+    },
+    isEditorChoice: {
+      type: 'boolean'
     }
 
   },
@@ -23,7 +29,7 @@ module.exports = {
   },
 
 
-  fn: async function ({ genre }) {
+  fn: async function ({ genre, isBestseller, isEditorChoice }) {
 
     let sessionUserId = this.req.session.userId;
     let user = await User.findOne({ id: sessionUserId });
@@ -32,14 +38,17 @@ module.exports = {
 
     // let listOfBooks = await Book.find();
     let listOfBooks;
+
     if (genre == 'All' || genre == undefined) {
       listOfBooks = await Book.find().meta({ skipRecordVerification: true });
 
     } else {
-      listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
-
+      listOfBooks = await Book.find({ genre: genre, isBestseller: isBestseller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+      console.log(genre)
+      console.log(isBestseller)
+      console.log(isEditorChoice)
     }
-    return { listOfBooks, genre, user };
+    return { listOfBooks, genre, isBestseller, isEditorChoice, user };
   }
 
 
