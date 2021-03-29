@@ -39,7 +39,6 @@
           value="1"
         />
       </div>
-
       <div class="optionsMenu__option">
         <label for="isEditorsChoise"
         ><i class="fas fa-bookmark"></i
@@ -68,21 +67,34 @@
     <h3 class="sectionHeader">SEARCH RESULTS</h3>
     <div class="searchResults">
       <!-- an eBook to repeat -->
-      <% for(i=0; i<10; i++) {%>
-      <div class="bookCard">
-        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
-        <p class="bookTitle">A Shifter's Curse</p>
-        <p class="bookAuthor">Raven Steele</p>
-        <div class="bookDetails">
-          <span class="bookRating">Rating: 4.5</span>
-          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
-          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
-        </div>
-      </div>
+      <% for(let i=0; i<listOfBooks.length; i++) {%>
+        <a href="title/<%= listOfBooks[i].id %> ">
+          <div class="bookCard">
+            <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %>" alt="" />
+            <p class="bookTitle"><%= listOfBooks[i].title %></p>
+            <p class="bookAuthor"><%= listOfBooks[i].author %></p>
+            <div class="bookDetails">
+              <span class="bookRating">Rating: <%= listOfBooks[i].rating %></span>
+              <span class="bookBS">
+                <%if(listOfBooks[i].isBestseller) {%>
+                 <i class="fas fa-star"></i>
+                <% } %>
+               </span>
+
+              <span class="bookEC">
+                <%if(listOfBooks[i].isEditorChoice) {%>
+                 <i class="fas fa-bookmark"></i>
+                <% } %>
+              </span>
+             
+            </div>
+          </div>
+        </a>
       <% } %>
       <!-- end of ebook -->
     </div>
   </main>
 </div>
-
 <script src="/js/ebooks.js"></script>
+
+

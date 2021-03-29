@@ -7,6 +7,13 @@ module.exports = {
   description: 'Display "E book" page.',
 
 
+  inputs: {
+    genre: {
+      type: 'string',
+    }
+
+  },
+
   exits: {
 
     success: {
@@ -16,17 +23,25 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function ({ genre }) {
+
+    let sessionUserId = this.req.session.userId;
+    let user = await User.findOne({ id: sessionUserId });
+    sails.log(user)
 
 
-    let user = null;
-    if (this.req.session.userId) {
-      user = await User.findOne({ id: this.req.session.userId })
-      return { user }
+    // let listOfBooks = await Book.find();
+    let listOfBooks;
+    if (genre == 'All' || genre == undefined) {
+      listOfBooks = await Book.find().meta({ skipRecordVerification: true });
+
+      // } else {
+      //   listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
+
+      // }
+      return { listOfBooks, genre, user };
     }
-    // Respond with view.
-    return { user };
+
+
   }
-
-
-};
+}
