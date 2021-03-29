@@ -28,7 +28,6 @@ module.exports = {
 
 
   fn: async function ({ firstName, lastName, email, password, confirmPassword }) {
-    sails.log(firstName, lastName, email, password, confirmPassword, isKid);
     this.email = email.toLowerCase().trim(); // this propably works
     var isUser = await User.findOne({ email: email });
     if (isUser) throw { problem: '<h2> Email already in use! </h2>' }
