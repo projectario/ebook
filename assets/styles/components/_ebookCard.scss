@@ -1,0 +1,29 @@
+.bookCard {
+  // background-color: rgb(228, 228, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #333;
+  width: 220px;
+  height: 420px;
+  box-sizing: border-box;
+  margin: 20px 15px;
+  font-family: "Poppins", sans-serif;
+
+  .bookTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .bookRatingValue {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .bookBS,
+  .bookEC {
+    margin-left: 5px;
+  }
+}

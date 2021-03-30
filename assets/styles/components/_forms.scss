@@ -18,7 +18,7 @@
 
   .input {
     margin-bottom: 15px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     height: 35px;
     outline: none;
     border: none;
@@ -27,11 +27,11 @@
     &:focus {
       outline: none;
       border-bottom: 2px solid #077a70;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     &:focus:invalid {
-      border-bottom: 2px solid tomato;
+      border-bottom: 3px solid tomato;
     }
   }
 

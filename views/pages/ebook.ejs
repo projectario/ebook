@@ -1,0 +1,38 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+</head>
+
+<div class="navbar">
+  <div class="navbar__logo">
+    <a href="/"><i class="fas fa-atlas"></i>eBook</a>
+  </div>
+  <form class="navbar__search">
+    <input
+      type="text"
+      name="searchBook"
+      class="searchBook"
+      placeholder="Search by title..."
+    />
+    <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+  </form>
+  <div class="navbar__options">
+    <div class="navbar__options">
+      <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+      <% if (user) { %>
+      <div class="navbar__login"><a href="#"> <%= user.firstName %> </a></div>
+      <div class="navbar__signup"><a href="/logout">Logout</a></div>
+
+      <% } else {%>
+      <div class="navbar__signup"><a href="/signup">Sign Up</a></div>
+      <div class="navbar__login"><a href="/login">Log In</a></div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%= ebook.title %>

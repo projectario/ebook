@@ -19,7 +19,7 @@ module.exports = {
     language: { type: 'string' },
     releasedYear: { type: 'number' },
     rating: { type: 'number' },
-    isBestseller: { type: 'boolean' },
+    isBestSeller: { type: 'boolean' },
     isEditorChoice: { type: 'boolean' },
     coverUrl: { type: 'string' },
     purchases: {

@@ -1,12 +1,12 @@
 .navbar {
   @include flex-row;
   justify-content: space-around;
-  height: 8vh;
+  height: 7vh;
   // background-color: rgba($color-primary, 0.7);
   background-image: linear-gradient(
     180deg,
     rgba($color-primary, 1),
-    rgba($color-primary, 0.3)
+    rgba($color-primary, 0.5)
   );
   align-items: center;
   position: fixed;
