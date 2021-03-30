@@ -1,0 +1,68 @@
+// body {
+//   height: 100vh;
+//   //   background-image: url(../images/reading_ebook.jpg);
+
+//   background-size: cover;
+//   border: 1px solid rgba(0, 0, 0, 0);
+// }
+
+.bookCardetails {
+  background-color: $color-light;
+  @include flex-row;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #333;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 10% auto;
+  font-family: "Poppins", sans-serif;
+
+  .detail {
+    margin: 10px;
+  }
+
+  .cardLeft {
+    .bookDetails {
+      @include flex-column;
+    }
+    .bookRatingValue {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .readNowBtn {
+      display: block;
+      text-align: center;
+
+      background-color: $color-Purple;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 7px;
+    }
+  }
+
+  .cardRight {
+    @include flex-column;
+    margin-left: 20px;
+    .bookTitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      color: $color-Purple;
+    }
+    .author {
+      font-style: italic;
+      font-weight: 600;
+    }
+    .bookDescription {
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .bookBS,
+    .bookEC {
+      color: $color-Purple;
+      font-weight: 600;
+    }
+  }
+}

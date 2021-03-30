@@ -1,38 +1,42 @@
-<head>
-  <link
-    rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-    crossorigin="anonymous"
-  />
-</head>
+<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
 
-<div class="navbar">
-  <div class="navbar__logo">
-    <a href="/"><i class="fas fa-atlas"></i>eBook</a>
-  </div>
-  <form class="navbar__search">
-    <input
-      type="text"
-      name="searchBook"
-      class="searchBook"
-      placeholder="Search by title..."
+<div class="bookCardetails">
+  <div class="cardLeft">
+    <img
+      src="/images/eBooksImg/<%= ebook.coverUrl %>"
+      alt="Book's Cover Photo"
     />
-    <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
-  </form>
-  <div class="navbar__options">
-    <div class="navbar__options">
-      <div class="navbar__faq"><a href="/faq">FAQ</a></div>
-      <% if (user) { %>
-      <div class="navbar__login"><a href="#"> <%= user.firstName %> </a></div>
-      <div class="navbar__signup"><a href="/logout">Logout</a></div>
+    <a href="" class="readNowBtn">Read Now</a>
 
-      <% } else {%>
-      <div class="navbar__signup"><a href="/signup">Sign Up</a></div>
-      <div class="navbar__login"><a href="/login">Log In</a></div>
+    <div class="price">
+      Price: <span class="priceValue"><%= ebook.price %> €</span>
+    </div>
+  </div>
+
+  <div class="cardRight">
+    <p class="detail bookTitle"><%= ebook.title %></p>
+    <p class="detail bookAuthor">
+      By <span class="author"><%= ebook.author %></span>
+    </p>
+    <p class="detail">
+      <span>Genre: <%= ebook.genre %> </span
+      ><span class="detail">Bublished: <%= ebook.releasedYear %> </span>
+      <span class="detail bookRating"
+        >Rating:
+        <span class="bookRatingValue"><%= ebook.rating %></span>
+      </span>
+    </p>
+    <p class="detail bookDescription"><%= ebook.description %></p>
+    <div class="detail">
+      <%if(ebook.isBestseller) {%>
+      <span class="detail bookBS">
+        <i class="fas fa-star"></i> Best Seller
+      </span>
+      <% } %> <%if(ebook.isEditorChoice) {%>
+      <span class="detail bookEC">
+        <i class="fas fa-bookmark"></i> Editor's Choice
+      </span>
       <% } %>
     </div>
   </div>
 </div>
-
-<%= ebook.title %>
