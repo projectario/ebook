@@ -12,14 +12,24 @@
     <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
   </form>
   <div class="navbar__options">
-    <div class="navbar__faq"><a href="/faq">FAQ</a></div>
+    <div class="navbar__faq">
+      <a href="/faq">FAQ<i class="fas fa-info-circle"></i></a>
+    </div>
     <% if (user) { %>
-    <div class="navbar__login"><a href="#"> <%= user.firstName %> </a></div>
-    <div class="navbar__signup"><a href="/logout">Logout</a></div>
+    <div class="navbar__login">
+      <a href="/account"> <%= user.firstName %><i class="fas fa-cog"></i></a>
+    </div>
+    <div class="navbar__signup">
+      <a href="/logout">Logout<i class="fas fa-sign-out-alt"></i></a>
+    </div>
 
     <% } else {%>
-    <div class="navbar__signup"><a href="/signup">Sign Up</a></div>
-    <div class="navbar__login"><a href="/login">Log In</a></div>
+    <div class="navbar__signup">
+      <a href="/signup">Sign Up<i class="fas fa-user-plus"></i></a>
+    </div>
+    <div class="navbar__login">
+      <a href="/login">Log In<i class="fas fa-sign-in-alt"></i></a>
+    </div>
     <% } %>
   </div>
 </div>

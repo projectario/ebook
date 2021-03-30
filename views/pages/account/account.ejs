@@ -1,13 +1,12 @@
-<%- partial('../../partials/head.ejs') %>
-    <%- partial('../../partials/navbar.ejs') %>
-        <main class="signup-page">
-            <section class="form__container-settings">
-                <h4 class="heading-secondary ">settings</h4>
-                <div class="form__container-settings--img"></div>
-                <div class="form__container-settings--links">
-                    <a href="/account/email" class="btn btn-text">change e-mail</a>
-                    <a href="/account/password" class="btn btn-text">change password</a>
-                    <a href="/account/name" class="btn btn-text">change name</a>
-                </div>
-            </section>
-        </main>
+<%- partial('../../partials/head.ejs') %> <%-
+partial('../../partials/navbar.ejs') %>
+
+<main class="account-page">
+  <section class="form">
+    <h4 class="formHeader">Settings</h4>
+    <i class="fas fa-user-cog"></i>
+    <a href="/account/name" class="btn btn-text">Change name</a>
+    <a href="/account/email" class="btn btn-text">Change e-mail</a>
+    <a href="/account/password" class="btn btn-text">Change password</a>
+  </section>
+</main>
