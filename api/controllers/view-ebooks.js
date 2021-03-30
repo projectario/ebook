@@ -49,10 +49,11 @@ module.exports = {
     if ((genre == 'All' || genre == 'Genre') && price) {
 
       listOfBooks = await Book.find().where({ price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
-    } else if (!(genre == 'All' || genre == 'Genre') && price) {
+    } else if (price) {
+      // 
       // bookPrice = await Book.find().where({ price: (price) }).meta({ skipRecordVerification: true });
       listOfBooks = await Book.find({ genre: genre, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
-      //{ where: { genre: genre, price: { '<=': parseInt(price) } } }}
+
     }
     // Search only based on Genre and If the book is bestseller or editor choice
     if ((genre == 'All' || genre == 'Genre') && isBestSeller) {
