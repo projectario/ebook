@@ -16,6 +16,9 @@ module.exports = {
     },
     isEditorChoice: {
       type: 'boolean'
+    },
+    price: {
+      type: 'number'
     }
 
   },
@@ -59,18 +62,15 @@ module.exports = {
 
     // Search only based on Genre and If the book is bestseller and edditor choice
     if ((genre == "All" || genre == 'Genre') && isBestSeller && isEditorChoice) {
-      listOfBooks = await Book.find({ isBestSeller: isBestSeller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+      listOfBooks = await Book.find({ isBestSeller: isBestSeller, isEditorChoice: isEditorChoice }).where({ isBestSeller: 1, isEditorChoice: 1 }).meta({ skipRecordVerification: true });
     }
     // Search only based on Genre and editor choice
     if ((genre == 'All' || genre == 'Genre') && isEditorChoice) {
       listOfBooks = await Book.find({ isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
     }
-
-
-
-
-
-
+    if ((genre == "All" || genre == 'Genre') && price) {
+      listOfBooks = await Book.find().where({ price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
+    }
 
 
     return { listOfBooks, genre, isBestSeller, isEditorChoice, user };
