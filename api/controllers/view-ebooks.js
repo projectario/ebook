@@ -11,7 +11,7 @@ module.exports = {
     genre: {
       type: 'string',
     },
-    isBestseller: {
+    isBestSeller: {
       type: 'boolean'
     },
     isEditorChoice: {
@@ -29,7 +29,7 @@ module.exports = {
   },
 
 
-  fn: async function ({ genre, isBestseller, isEditorChoice }) {
+  fn: async function ({ genre, isBestSeller, isEditorChoice, price }) {
 
     let sessionUserId = this.req.session.userId;
     let user;
@@ -37,19 +37,42 @@ module.exports = {
       user = await User.findOne({ id: sessionUserId });
     }
 
-    // let listOfBooks = await Book.find();
-    let listOfBooks;
+    let listOfBooks = await Book.find().meta({ skipRecordVerification: true });
+    // let listOfBooks;
 
-    if (genre == 'All' || genre == undefined) {
+
+    // Search only based on Genre
+    if (genre == 'All' || genre == 'Genre') {
       listOfBooks = await Book.find().meta({ skipRecordVerification: true });
-
     } else {
-      listOfBooks = await Book.find({ genre: genre, isBestseller: isBestseller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
-      console.log(genre)
-      console.log(isBestseller)
-      console.log(isEditorChoice)
+      listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
     }
-    return { listOfBooks, genre, isBestseller, isEditorChoice, user };
+
+    // Search only based on Genre and If the book is bestseller or editor choice
+    if ((genre == 'All' || genre == 'Genre') && isBestSeller) {
+      listOfBooks = await Book.find({ isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
+    } else if (isBestSeller) {
+      listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
+    } else if (isEditorChoice) {
+      listOfBooks = await Book.find({ genre: genre, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+    }
+
+    // Search only based on Genre and If the book is bestseller and edditor choice
+    if ((genre == "All" || genre == 'Genre') && isBestSeller && isEditorChoice) {
+      listOfBooks = await Book.find({ isBestSeller: isBestSeller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+    }
+    // Search only based on Genre and editor choice
+    if ((genre == 'All' || genre == 'Genre') && isEditorChoice) {
+      listOfBooks = await Book.find({ isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+    }
+
+
+
+
+
+
+    return { listOfBooks, genre, isBestSeller, isEditorChoice, user };
+
   }
 
 
