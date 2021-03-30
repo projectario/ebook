@@ -31,13 +31,17 @@
         <span class="detailValue"><%= ebook.rating %></span>
       </span>
     </p>
+    <% console.log(ebook) %>
     <p class="detail bookDescription"><%= ebook.description %></p>
     <div class="detail">
-      <%if(ebook.isBestseller) {%>
+      <!-- Star for Best Sellers -->
+      <%if(ebook.isBestSeller) {%>
       <span class="detail bookBS">
         <i class="fas fa-star"></i> Best Seller
       </span>
-      <% } %> <%if(ebook.isEditorChoice) {%>
+      <% } %>
+      <!-- Editor's Choice -->
+      <%if(ebook.isEditorChoice) {%>
       <span class="detail bookEC">
         <i class="fas fa-bookmark"></i> Editor's Choice
       </span>
