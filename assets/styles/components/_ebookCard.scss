@@ -11,6 +11,11 @@
   margin: 20px 15px;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   .bookTitle {
     font-size: 1.2rem;

@@ -18,12 +18,17 @@
     <p class="detail bookAuthor">
       By <span class="author"><%= ebook.author %></span>
     </p>
-    <p class="detail">
-      <span>Genre: <%= ebook.genre %> </span
-      ><span class="detail">Bublished: <%= ebook.releasedYear %> </span>
+    <p class="detailList">
+      <span class="detail"
+        >Genre: <span class="detailValue"><%= ebook.genre %> </span>
+      </span>
+      <span class="detail"
+        >Bublished: <span class="detailValue"><%= ebook.releasedYear %> </span>
+      </span>
+
       <span class="detail bookRating"
         >Rating:
-        <span class="bookRatingValue"><%= ebook.rating %></span>
+        <span class="detailValue"><%= ebook.rating %></span>
       </span>
     </p>
     <p class="detail bookDescription"><%= ebook.description %></p>
