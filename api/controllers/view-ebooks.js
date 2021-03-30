@@ -23,7 +23,7 @@ module.exports = {
   exits: {
 
     success: {
-      viewTemplatePath: 'pages/eBooks'
+      viewTemplatePath: 'pages/ebooks'
     }
 
   },
@@ -32,9 +32,10 @@ module.exports = {
   fn: async function ({ genre, isBestseller, isEditorChoice }) {
 
     let sessionUserId = this.req.session.userId;
-    let user = await User.findOne({ id: sessionUserId });
-    sails.log(user)
-
+    let user;
+    if (sessionUserId) {
+      user = await User.findOne({ id: sessionUserId });
+    }
 
     // let listOfBooks = await Book.find();
     let listOfBooks;
