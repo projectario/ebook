@@ -50,7 +50,7 @@
         <div class="homeContainer_Section">
           <!-- an eBook to repeat -->
           <% for(let i=0; i<listOfBooks.length; i++) {%>
-            <% if(listOfBooks[i].isBestseller) {%>
+            <% if(listOfBooks[i].isBestSeller) {%>
               <a class="bookCard" href="title/<%= listOfBooks[i].id %>">
                 <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %> " alt="" />
                 <p class="bookTitle">
@@ -60,24 +60,26 @@
                   <%= listOfBooks[i].author %>
                 </p>
                 <div class="bookDetails">
-                  <span class="bookRating">Rating: 
-                    <span class="bookRatingValue"><%= listOfBooks[i].rating %></span>
+                  <span class="bookRating">Rating:
+                    <span class="bookRatingValue">
+                      <%= listOfBooks[i].rating %>
+                    </span>
                   </span>
                   <span class="bookBS">
-                    <%if(listOfBooks[i].isBestseller) {%>
-                     <i class="fas fa-star"></i>
-                    <% } %>
+                    <%if(listOfBooks[i].isBestSeller) {%>
+                      <i class="fas fa-star"></i>
+                      <% } %>
                   </span>
                   <span class="bookEC">
                     <%if(listOfBooks[i].isEditorChoice) {%>
-                     <i class="fas fa-bookmark"></i>
-                    <% } %>
+                      <i class="fas fa-bookmark"></i>
+                      <% } %>
                   </span>
                 </div>
               </a>
-            <% } %>
-          <% } %>
-          <!-- end of ebook -->
+              <% } %>
+                <% } %>
+                  <!-- end of ebook -->
         </div>
       </section>
 
@@ -88,7 +90,7 @@
         <div class="homeContainer_Section">
           <!-- an eBook -->
           <% for(let i=0; i<listOfBooks.length; i++) {%>
-            
+
             <% if(listOfBooks[i].isEditorChoice) {%>
               <a class="bookCard" href="title/<%= listOfBooks[i].id %>">
                 <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %> " alt="" />
@@ -99,25 +101,27 @@
                   <%= listOfBooks[i].author %>
                 </p>
                 <div class="bookDetails">
-                  <span class="bookRating">Rating: 
-                    <span class="bookRatingValue"><%= listOfBooks[i].rating %></span>
+                  <span class="bookRating">Rating:
+                    <span class="bookRatingValue">
+                      <%= listOfBooks[i].rating %>
+                    </span>
                   </span>
                   <span class="bookBS">
-                    <%if(listOfBooks[i].isBestseller) {%>
-                     <i class="fas fa-star"></i>
-                    <% } %>
+                    <%if(listOfBooks[i].isBestSeller) {%>
+                      <i class="fas fa-star"></i>
+                      <% } %>
                   </span>
                   <span class="bookEC">
                     <%if(listOfBooks[i].isEditorChoice) {%>
-                     <i class="fas fa-bookmark"></i>
-                    <% } %>
+                      <i class="fas fa-bookmark"></i>
+                      <% } %>
                   </span>
                 </div>
-              </a>         
-            <% } %>
-        
-          <% } %>
-          <!-- end of ebook -->
+              </a>
+              <% } %>
+
+                <% } %>
+                  <!-- end of ebook -->
         </div>
       </section>
     </main>
