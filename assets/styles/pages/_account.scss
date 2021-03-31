@@ -21,3 +21,18 @@
     transform: scale(1.03);
   }
 }
+
+.logoutOption {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    text-decoration: underline;
+  }
+}
