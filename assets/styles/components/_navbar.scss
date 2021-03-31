@@ -32,29 +32,6 @@
     }
   }
 
-  .searchBook {
-    background-color: rgba(255, 255, 255, 0.342);
-    width: 250px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    padding: 5px 10px;
-    color: $color-Purple;
-
-    &:placeholder-shown {
-      font-size: 1.3rem;
-      padding: 5px 10px;
-    }
-
-    &:focus {
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.726);
-      font-size: 1.3rem;
-      padding: 5px 10px;
-    }
-  }
-
   &__options {
     @include flex-row;
     justify-content: space-around;

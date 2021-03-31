@@ -3,46 +3,60 @@
 
     <header class="eBooksHeader">
       <div class="landing">
-
+        <form class="searchForm">
+          <input
+            type="text"
+            name="searchBook"
+            class="searchBook"
+            placeholder="Search by title..."/>          
+          <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+        </form>
       </div>
     </header>
 
     <div class="eBooksContainer">
-      <aside class="optionsMenu">
-        <form action="" method="">
-          <select name="genre" class="genre__sellection optionsMenu__option" id="genre">
-            <option style="display: none">Genre</option>
-            <option value="All">- All -</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Romance">Romance</option>
-            <option value="Action">Action</option>
-            <option value="SciFi">Science Fiction</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Children">Children's</option>
-            <option value="Thriller">Thriller</option>
-            <option value="History">History</option>
-            <option value="Educational">Educational</option>
-          </select>
 
-          <div class="optionsMenu__option">
-            <label for="isBestSeller"></label>
-            <i class="fas fa-star"></i> Best Seller</label>
-            <input type="checkbox" name="isBestSeller" id="isBestSeller" value="true" />
-          </div>
-          <div class="optionsMenu__option">
-            <label for="isEditorChoice"><i class="fas fa-bookmark"></i> Editor's Choice</label>
-            <input type="checkbox" name="isEditorChoice" id="isEditorChoice" value="true" />
-          </div>
+      <aside class="asideContainer">
+        
+  
+            <div class="optionsMenu">
+              <form action="" method="">
+                <select name="genre" class="genre__sellection optionsMenu__option" id="genre">
+                  <option style="display: none">Genre</option>
+                  <option value="All">- All -</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Action">Action</option>
+                  <option value="SciFi">Science Fiction</option>
+                  <option value="Mystery">Mystery</option>
+                  <option value="Children">Children's</option>
+                  <option value="Thriller">Thriller</option>
+                  <option value="History">History</option>
+                  <option value="Educational">Educational</option>
+                </select>
+      
+                <div class="optionsMenu__option">
+                  <label for="isBestSeller"></label>
+                  <i class="fas fa-star"></i> Best Seller</label>
+                  <input type="checkbox" name="isBestSeller" id="isBestSeller" value="true" />
+                </div>
+                <div class="optionsMenu__option">
+                  <label for="isEditorChoice"><i class="fas fa-bookmark"></i> Editor's Choice</label>
+                  <input type="checkbox" name="isEditorChoice" id="isEditorChoice" value="true" />
+                </div>
+      
+                <div class="range-wrap optionsMenu__option">
+                  <label for="price">Max price:</label>
+                  <input type="range" class="range" min="0" max="20" value="20" id="price" name="price" />
+                  <output class="bubble"></output>
+                </div>
+      
+                <button type="submit" class="optionsMenu__btn">Search</button>
+              </form>
+            </div>
 
-          <div class="range-wrap optionsMenu__option">
-            <label for="price">Max price:</label>
-            <input type="range" class="range" min="0" max="20" value="20" id="price" name="price" />
-            <output class="bubble"></output>
-          </div>
-
-          <button type="submit" class="optionsMenu__btn">Search</button>
-        </form>
       </aside>
+      
 
       <main class="browseBooks">
         <h3 class="sectionHeader">SEARCH RESULTS</h3>

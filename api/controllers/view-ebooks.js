@@ -16,55 +16,58 @@ module.exports = {
     },
     isEditorChoice: {
       type: 'boolean'
+    },
+    searchBook: {
+      type: 'string'
     }
-
   },
 
   exits: {
-
     success: {
       viewTemplatePath: 'pages/ebooks'
     }
-
   },
 
 
-  fn: async function ({ genre, isBestSeller, isEditorChoice, price }) {
-
+  fn: async function ({ genre, isBestSeller, isEditorChoice, price, searchBook }) {
+    console.log(searchBook);
     let sessionUserId = this.req.session.userId;
     let user;
     if (sessionUserId) {
       user = await User.findOne({ id: sessionUserId });
     }
 
-    let listOfBooks = await Book.find().meta({ skipRecordVerification: true });
-    // let listOfBooks;
-
-
-    // Search only based on Genre
-    if (genre == 'All' || genre == 'Genre') {
-      listOfBooks = await Book.find().meta({ skipRecordVerification: true });
+    if (searchBook) {
+      listOfBooks = await Book.find({ title: { 'contains': searchBook } }).meta({ skipRecordVerification: true });
     } else {
-      listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
+      // Search only based on Genre
+      if (genre == 'All' || genre == 'Genre') {
+        listOfBooks = await Book.find().meta({ skipRecordVerification: true });
+      } else {
+        listOfBooks = await Book.find({ genre: genre }).meta({ skipRecordVerification: true });
+      }
+
+      // Search only based on Genre and If the book is bestseller or editor choice
+      if ((genre == 'All' || genre == 'Genre') && isBestSeller) {
+        listOfBooks = await Book.find({ isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
+      } else if (isBestSeller) {
+        listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
+      } else if (isEditorChoice) {
+        listOfBooks = await Book.find({ genre: genre, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+      }
+
+      // Search only based on Genre and If the book is bestseller and edditor choice
+      if ((genre == "All" || genre == 'Genre') && isBestSeller && isEditorChoice) {
+        listOfBooks = await Book.find({ isBestSeller: isBestSeller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+      }
+      // Search only based on Genre and editor choice
+      if ((genre == 'All' || genre == 'Genre') && isEditorChoice) {
+        listOfBooks = await Book.find({ isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+      }
     }
 
-    // Search only based on Genre and If the book is bestseller or editor choice
-    if ((genre == 'All' || genre == 'Genre') && isBestSeller) {
-      listOfBooks = await Book.find({ isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
-    } else if (isBestSeller) {
-      listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
-    } else if (isEditorChoice) {
-      listOfBooks = await Book.find({ genre: genre, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
-    }
 
-    // Search only based on Genre and If the book is bestseller and edditor choice
-    if ((genre == "All" || genre == 'Genre') && isBestSeller && isEditorChoice) {
-      listOfBooks = await Book.find({ isBestSeller: isBestSeller, isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
-    }
-    // Search only based on Genre and editor choice
-    if ((genre == 'All' || genre == 'Genre') && isEditorChoice) {
-      listOfBooks = await Book.find({ isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
-    }
+
 
 
 
