@@ -18,26 +18,28 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-
+  // Homepage
   '/': { action: 'view-homepage' },
 
-  // login
-  'GET /login': { action: 'entrance/view-login' },
-  'POST /login': { action: 'entrance/login' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
+  // login
+  'GET /login': { action: 'entrance/view-login' },
+  'POST /login': { action: 'entrance/login' },
   // logout
   'GET /logout': { action: 'account/logout' },
-  //chat
-  'GET /chat': { action: 'chat' },
+
 
   'GET /ebooks': { action: 'view-ebooks' },
   'GET /title/:id': { action: 'view-ebook' },
 
+  //===============   Account   ===========================
+  'GET /mybooks': { action: 'view-mybooks' },
 
-
-  //Account settings 
+  // Chat
+  'GET /chat': { action: 'chat' },
+  //===============   Account Settings   ==================
   'GET /account': { action: 'account/account-settings' },
   //Update password
   'GET /account/password': { action: 'account/settings/view-edit-password' },
