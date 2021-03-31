@@ -20,29 +20,36 @@ module.exports = {
     price: {
       type: 'number'
     },
-
-  },
-
-  exits: {
-
-    success: {
-      viewTemplatePath: 'pages/ebooks'
+    searchBook: {
+      type: 'string'
     }
 
   },
 
+  exits: {
+    success: {
+      viewTemplatePath: 'pages/ebooks'
+    }
+  },
 
-  fn: async function ({ genre, isBestSeller, isEditorChoice, price }) {
 
+  fn: async function ({ genre, isBestSeller, isEditorChoice, price, searchBook }) {
+    console.log(searchBook);
     let sessionUserId = this.req.session.userId;
     let user;
     if (sessionUserId) {
       user = await User.findOne({ id: sessionUserId });
     }
 
-    let listOfBooks = await Book.find().meta({ skipRecordVerification: true });
 
-    // Search by (Genre OR price) and by (Genre AND price)
+    let listOfBooks = await Book.find().meta({ skipRecordVerification: true });
+    
+//     If the users is searching by title
+    if (searchBook) {
+      listOfBooks = await Book.find({ title: { 'contains': searchBook } }).meta({ skipRecordVerification: true });
+    } else {
+     
+      // Search by (Genre OR price) and by (Genre AND price)
     if((genre=='All' || genre == 'Genre')) {
       listOfBooks = await Book.find().where({ price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
     } else if(price) {
@@ -66,6 +73,9 @@ module.exports = {
     } else if(isBestSeller && isEditorChoice){
       listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller, isEditorChoice: isEditorChoice, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
     }
+     
+ }
+
 
     return { listOfBooks, genre, isBestSeller, isEditorChoice, user, price };
   }
