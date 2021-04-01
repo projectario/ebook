@@ -71,7 +71,7 @@ module.exports = {
       // Looks like this is a valid, logged-in, online user, so show the chat page.
       return exits.chatPage({
         loggedInUserId: env.req.session.userId,
-        username: user.username
+        username: user.firstName
       });
     });
 
