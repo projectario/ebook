@@ -23,9 +23,14 @@ module.exports = {
 
 
   fn: async function () {
-    if (this.req.session.userId) throw {redirect: '/movies'}
+
+    let user = null;
+    if (this.req.session.userId) {
+      user = await User.findOne({ id: this.req.session.userId })
+      return { user }
+    }
     // Respond with view.
-    return {};
+    return { user };
 
   }
 

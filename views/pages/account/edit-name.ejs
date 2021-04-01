@@ -1,17 +1,37 @@
-<%- partial('../../partials/head.ejs') %>
-    <%- partial('../../partials/navbar.ejs') %>
-        <main class="signup-page">
-            <section class="form__container">
-                <form action="/account/name" method="POST" class="form">
-                    <input id="firstName" name="firstName" class="input" type="text" placeholder="First Name"
-                        pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                        title="Please fill out the field with 3-15 characters and no numbers"
-                        oninput="validateName()" />
-                    <input id="lastName" name="lastName" class="input" type="text" placeholder="Last Name"
-                        pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
-                        title="Please fill out the field with 3-15 characters and no numbers"
-                        oninput="validateLastName()" />
-                    <button class="btn btn-form">Update Personal Info</button>
-                </form>
-            </section>
-        </main>
+<%- partial('../../partials/head.ejs') %> <%-
+partial('../../partials/navbar.ejs') %>
+<main class="signup-page">
+  <section class="form__container">
+    <form action="/account/name" method="POST" class="form">
+      <input
+        id="firstName"
+        name="firstName"
+        class="input"
+        type="text"
+        placeholder="First Name"
+        pattern="[A-Za-z]{1,15}"
+        minlength="3"
+        maxlength="15"
+        value="<%= user.firstName %>"
+        required
+        title="Please fill out the field with 3-15 characters and no numbers"
+        oninput="validateName()"
+      />
+      <input
+        id="lastName"
+        name="lastName"
+        class="input"
+        type="text"
+        placeholder="Last Name"
+        pattern="[A-Za-z]{1,15}"
+        minlength="3"
+        maxlength="15"
+        value="<%= user.lastName %>"
+        required
+        title="Please fill out the field with 3-15 characters and no numbers"
+        oninput="validateLastName()"
+      />
+      <button class="btn btn-form">Update Name</button>
+    </form>
+  </section>
+</main>

@@ -28,7 +28,7 @@ module.exports = {
     fn: async function ({ firstName, lastName }) {
 
         let userId = this.req.session.userId;
-        let user = await User.findOne({ id: userId });
+        // let user = await User.findOne({ id: userId });
         // sails.log(user)
         // sails.log(user)
 
@@ -44,10 +44,7 @@ module.exports = {
             .set({ lastName: newLastname });
 
 
-
-
-
-        throw { redirect: '/ebooks' }
+        throw { redirect: '/account' }
 
     }
 

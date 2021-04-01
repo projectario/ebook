@@ -1,0 +1,38 @@
+.fa-user-cog {
+  color: #eee;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.btn-text {
+  color: white;
+  background-color: rgba($color-primary, 0.903);
+  font-size: 1.3rem;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border-bottom: 2px solid #333;
+  border-right: 2px solid #333;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-Purple;
+    transform: scale(1.03);
+  }
+}
+
+.logoutOption {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    text-decoration: underline;
+  }
+}

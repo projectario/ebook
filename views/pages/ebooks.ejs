@@ -1,92 +1,97 @@
-<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
+<%- partial('../partials/head.ejs') %>
+  <%- partial('../partials/navbar.ejs') %>
 
-<header class="eBooksHeader">
-  <div class="landing">
-    <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
-    <!-- <h3 class="sub-heading">
-      eBook means <span class="typed-text"></span
-      ><span class="cursor">&nbsp;</span>
-    </h3> -->
-  </div>
-</header>
-
-<div class="eBooksContainer">
-  <aside class="optionsMenu">
-    <form action="" method="">
-      <select
-        name="genre"
-        class="genre__sellection optionsMenu__option"
-        id="genre"
-        onchange="this.form.submit()"
-      >
-        <option style="display: none">Genre</option>
-        <option value="All">- All -</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Romance">Romance</option>
-        <option value="Action">Action</option>
-        <option value="SciFi">Science Fiction</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Children">Children's</option>
-        <option value="Thriller">Thriller</option>
-        <option value="History">History</option>
-        <option value="Educational">Educational</option>
-      </select>
-
-      <div class="optionsMenu__option">
-        <label for="isBestSeller"></label>
-          <i class="fas fa-star"></i> Best Seller</label
-        >
-        <input
-          type="checkbox"
-          name="isBestSeller"
-          id="isBestSeller"
-          value="1"
-        />
+    <header class="eBooksHeader">
+      <div class="landing">
+        <form class="searchForm">
+          <input
+            type="text"
+            name="searchBook"
+            class="searchBook"
+            placeholder="Search by title..."/>          
+          <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+        </form>
       </div>
+    </header>
 
-      <div class="optionsMenu__option">
-        <label for="isEditorsChoise"
-        ><i class="fas fa-bookmark"></i
-          > Editor's Choise</label>
-        <input type="checkbox" name="isEditorsChoise" id="isEditorsChoise" />
-      </div>
+    <div class="eBooksContainer">
 
-      <div class="range-wrap optionsMenu__option">
-        <label for="range">Max price:</label>
-        <input
-          type="range"
-          class="range"
-          min="0"
-          max="50"
-          value="50"
-          id="range"
-        />
-        <output class="bubble"></output>
-      </div>
+      <aside class="asideContainer">
+        
+  
+            <div class="optionsMenu">
+              <form action="" method="">
+                <select name="genre" class="genre__sellection optionsMenu__option" id="genre">
+                  <option style="display: none">Genre</option>
+                  <option value="All">- All -</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Action">Action</option>
+                  <option value="SciFi">Science Fiction</option>
+                  <option value="Mystery">Mystery</option>
+                  <option value="Children">Children's</option>
+                  <option value="Thriller">Thriller</option>
+                  <option value="History">History</option>
+                  <option value="Educational">Educational</option>
+                </select>
+      
+                <div class="optionsMenu__option">
+                  <label for="isBestSeller"></label>
+                  <i class="fas fa-star"></i> Best Seller</label>
+                  <input type="checkbox" name="isBestSeller" id="isBestSeller" value="true" />
+                </div>
+                <div class="optionsMenu__option">
+                  <label for="isEditorChoice"><i class="fas fa-bookmark"></i> Editor's Choice</label>
+                  <input type="checkbox" name="isEditorChoice" id="isEditorChoice" value="true" />
+                </div>
+      
+                <div class="range-wrap optionsMenu__option">
+                  <label for="price">Max price:</label>
+                  <input type="range" class="range" min="0" max="20" value="20" id="price" name="price" />
+                  <output class="bubble"></output>
+                </div>
+      
+                <button type="submit" class="optionsMenu__btn">Search</button>
+              </form>
+            </div>
 
-      <button type="submit" class="optionsMenu__btn">Search</button>
-    </form>
-  </aside>
+      </aside>
+      
 
-  <main class="browseBooks">
-    <h3 class="sectionHeader">SEARCH RESULTS</h3>
-    <div class="searchResults">
-      <!-- an eBook to repeat -->
-      <% for(i=0; i<10; i++) {%>
-      <div class="bookCard">
-        <img src="/images/eBooksImg/51SZX1BvX6L.jpg" alt="" />
-        <p class="bookTitle">A Shifter's Curse</p>
-        <p class="bookAuthor">Raven Steele</p>
-        <div class="bookDetails">
-          <span class="bookRating">Rating: 4.5</span>
-          <span class="bookBS"> BS <i class="fas fa-star"></i></span>
-          <span class="bookEC"> EC <i class="fas fa-bookmark"></i></span>
+      <main class="browseBooks">
+        <h3 class="sectionHeader">SEARCH RESULTS</h3>
+        <div class="searchResults">
+          <!-- an eBook to repeat -->
+          <% for(let i=0; i<listOfBooks.length; i++) {%>
+            <a class="bookCard" href="title/<%= listOfBooks[i].id %> ">
+              <img src="/images/eBooksImg/<%= listOfBooks[i].coverUrl %>" alt="" />
+              <p class="bookTitle">
+                <%= listOfBooks[i].title %>
+              </p>
+              <p class="bookAuthor">
+                <%= listOfBooks[i].author %>
+              </p>
+              <div class="bookDetails">
+                <span class="bookRating">Rating:
+                  <span class="bookRatingValue">
+                    <%= listOfBooks[i].rating %>
+                  </span>
+                </span>
+                <span class="bookBS">
+                  <%if(listOfBooks[i].isBestSeller) {%>
+                    <i class="fas fa-star"></i>
+                    <% } %>
+                </span>
+                <span class="bookEC">
+                  <%if(listOfBooks[i].isEditorChoice) {%>
+                    <i class="fas fa-bookmark"></i>
+                    <% } %>
+                </span>
+              </div>
+            </a>
+            <% } %>
+              <!-- end of ebook -->
         </div>
-      </div>
-      <% } %>
-      <!-- end of ebook -->
+      </main>
     </div>
-  </main>
-</div>
-
-<script src="/js/ebooks.js"></script>
+    <script src="/js/ebooks.js"></script>

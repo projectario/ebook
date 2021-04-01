@@ -1,12 +1,12 @@
 .navbar {
   @include flex-row;
   justify-content: space-around;
-  height: 8vh;
+  height: 7vh;
   // background-color: rgba($color-primary, 0.7);
   background-image: linear-gradient(
     180deg,
     rgba($color-primary, 1),
-    rgba($color-primary, 0.3)
+    rgba($color-primary, 0.5)
   );
   align-items: center;
   position: fixed;
@@ -15,11 +15,9 @@
   z-index: 3;
 
   &__logo,
-  &__faq,
-  &__signup,
-  &__login {
+  &__option {
     font-size: $default-font-size;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
     transition: all 0.1s ease-in-out;
     margin: 0 3vw;
     a {
@@ -29,29 +27,6 @@
 
     &:hover {
       transform: translateY(-0.1rem);
-    }
-  }
-
-  .searchBook {
-    background-color: rgba(255, 255, 255, 0.342);
-    width: 250px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    padding: 5px 10px;
-    color: $color-Purple;
-
-    &:placeholder-shown {
-      font-size: 1.3rem;
-      padding: 5px 10px;
-    }
-
-    &:focus {
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.726);
-      font-size: 1.3rem;
-      padding: 5px 10px;
     }
   }
 

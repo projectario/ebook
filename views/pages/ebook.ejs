@@ -1,0 +1,56 @@
+<%- partial('../partials/head.ejs') %> <%- partial('../partials/navbar.ejs') %>
+
+<div class="bookCardetails">
+  <div class="cardLeft">
+    <img
+      src="/images/eBooksImg/<%= ebook.coverUrl %>"
+      alt="Book's Cover Photo"
+    />
+    <a href="" class="readNowBtn">Read Now</a>
+
+    <div class="price">
+      Price: <span class="priceValue"><%= ebook.price %> €</span>
+    </div>
+  </div>
+
+  <div class="cardRight">
+    <p class="detail bookTitle"><%= ebook.title %></p>
+    <p class="detail bookAuthor">
+      By <span class="author"><%= ebook.author %></span>
+    </p>
+    <p class="detailList">
+      <span class="detail"
+        >Genre: <span class="detailValue"><%= ebook.genre %> </span>
+      </span>
+      <span class="detail"
+        >Bublished: <span class="detailValue"><%= ebook.releasedYear %> </span>
+      </span>
+
+      <span class="detail bookRating"
+        >Rating:
+        <span class="detailValue"><%= ebook.rating %></span>
+      </span>
+    </p>
+    <p class="detail bookDescription"><%= ebook.description %></p>
+    <div class="detail">
+      <!-- Star for Best Sellers -->
+      <%if(ebook.isBestSeller) {%>
+      <span class="detail bookBS">
+        <i class="fas fa-star"></i> Best Seller
+      </span>
+      <% } %>
+      <!-- Editor's Choice -->
+      <%if(ebook.isEditorChoice) {%>
+      <span class="detail bookEC">
+        <i class="fas fa-bookmark"></i> Editor's Choice
+      </span>
+      <% } %>
+      <!-- Has Movie -->
+      <%if(ebook.movieId !=0) {%> 
+      <span>
+        <a href="#">Watch the movie</a>
+      </span>
+      <% } %> 
+    </div>
+  </div>
+</div>

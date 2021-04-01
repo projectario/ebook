@@ -33,7 +33,7 @@ module.exports = {
   fn: async function ({ email, password }) {
 
     // if (this.req.session.userId) throw {redirect: '/movies'};
-    let isUser = await User.findOne({ email: email.toLowerCase() });
+    let isUser = await User.findOne({ email: email.toLowerCase().trim() });
 
     //Check to see if we have this user id the database
     if (!isUser) throw { problem: '<h1>We dont know anyone that goes by that name! Try Again!</h1>' } // custom response about not matching email?
@@ -53,7 +53,7 @@ module.exports = {
         this.req.session.userId = user.id;
         await User.updateOne({id: user.id}).set({online: true})
 
-        throw { redirect: '/ebooks' }
+          throw { redirect: '/ebooks' }
       }
 
       else {

@@ -19,8 +19,9 @@ module.exports = {
     language: { type: 'string' },
     releasedYear: { type: 'number' },
     rating: { type: 'number' },
-    isBestseller: { type: 'boolean' },
+    isBestSeller: { type: 'boolean' },
     isEditorChoice: { type: 'boolean' },
+    movieId: {type: 'number'},
     coverUrl: { type: 'string' },
     purchases: {
       collection: 'Purchase',

@@ -23,11 +23,15 @@ module.exports = {
 
   fn: async function () {
 
+    if (this.req.session.userId) throw {redirect: '/'}
+    
+    let user = null;
     if (this.req.session.userId) {
-      throw { redirect: '/signup' };
+      user = await User.findOne({ id: this.req.session.userId })
+      return { user }
     }
-
-    return {};
+    // Respond with view.
+    return { user };
 
   }
 

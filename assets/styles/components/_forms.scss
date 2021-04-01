@@ -18,7 +18,7 @@
 
   .input {
     margin-bottom: 15px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     height: 35px;
     outline: none;
     border: none;
@@ -26,20 +26,24 @@
 
     &:focus {
       outline: none;
-      border-bottom: 2px solid #077a70;
-      font-size: 1.4rem;
+      border-bottom: 3px solid #077a70;
+      font-size: 1.2rem;
     }
 
     &:focus:invalid {
-      border-bottom: 2px solid tomato;
+      border-bottom: 3px solid tomato;
     }
   }
 
   .btn-form {
     background-color: $color-Purple;
     color: white;
-    height: 35px;
+    padding: 7px;
     width: 50%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      transform: translateY(-0.1rem);
+    }
   }
 }

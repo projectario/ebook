@@ -20,11 +20,13 @@ module.exports = {
 
 
     fn: async function () {
-        // let sessionUserId = this.req.session.userId;
 
-        // if (sessionUserId == undefined) throw { redirect: '/login' }
-
-        return {};
+        let sessionUserId = this.req.session.userId;
+        let user;
+        if (sessionUserId) {
+            user = await User.findOne({ id: sessionUserId });
+        }
+        return { user };
 
 
     }

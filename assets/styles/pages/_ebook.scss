@@ -1,0 +1,66 @@
+.bookCardetails {
+  background-color: $color-light;
+  @include flex-row;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #333;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 10% auto;
+  font-family: "Poppins", sans-serif;
+
+  .detail {
+    margin: 10px;
+  }
+
+  .cardLeft {
+    .readNowBtn {
+      display: block;
+      text-align: center;
+      background-color: $color-Purple;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 7px;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background-color: rgb(21, 83, 65);
+      }
+    }
+
+    .price {
+      text-align: center;
+      margin: 10px;
+      font-weight: 600;
+      color: $color-Purple;
+    }
+  }
+
+  .cardRight {
+    @include flex-column;
+    margin-left: 20px;
+    .bookTitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      color: $color-Purple;
+    }
+    .author {
+      font-style: italic;
+      font-weight: 600;
+    }
+    .bookDescription {
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .bookBS,
+    .bookEC {
+      color: $color-Purple;
+      font-weight: 600;
+    }
+    .detailValue {
+      font-weight: 600;
+    }
+  }
+}
