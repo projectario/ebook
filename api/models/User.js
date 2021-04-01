@@ -21,7 +21,7 @@ module.exports = {
       via: 'user'
     },
     purchases: {
-      collection: 'Purchase',
+      collection: 'Userbook',
       via: 'userId',
     },
 

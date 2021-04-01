@@ -18,9 +18,10 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+
+  // ===========   No policies here   =====================
   // Homepage
   '/': { action: 'view-homepage' },
-
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
@@ -38,7 +39,8 @@ module.exports.routes = {
   'GET /title/:id': { action: 'view-ebook' },
 
   //===============   Account   ===========================
-  'GET /mybooks': { action: 'view-mybooks' },
+  'GET /myebooks': { action: 'account/view-myebooks' },
+  'GET /bookreader/:id': { action: 'account/view-bookReader' },
 
   // Chat
   //===============   Account Settings   ==================

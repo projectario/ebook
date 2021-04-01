@@ -24,7 +24,7 @@ module.exports = {
     movieId: {type: 'number'},
     coverUrl: { type: 'string' },
     purchases: {
-      collection: 'Purchase',
+      collection: 'Userbook',
       via: 'bookId',
     }
 

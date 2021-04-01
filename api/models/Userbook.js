@@ -1,12 +1,12 @@
 /**
- * Purchased.js
+ * Purchase.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'purchases',
+  tableName: 'userbooks',
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
@@ -15,7 +15,6 @@ module.exports = {
     totalPrice: { type: 'number' },
     userId: { model: 'User' },
     bookId: { model: 'Book' },
-
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
