@@ -29,6 +29,9 @@ module.exports.routes = {
   'POST /login': { action: 'entrance/login' },
   // logout
   'GET /logout': { action: 'account/logout' },
+  //chat
+  'GET /chat': { action: 'chat/chat' },
+  'POST /chat': { action: 'chat/chat' },
 
 
   'GET /ebooks': { action: 'view-ebooks' },
@@ -38,7 +41,6 @@ module.exports.routes = {
   'GET /mybooks': { action: 'view-mybooks' },
 
   // Chat
-  'GET /chat': { action: 'chat' },
   //===============   Account Settings   ==================
   'GET /account': { action: 'account/account-settings' },
   //Update password

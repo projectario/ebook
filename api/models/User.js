@@ -12,7 +12,14 @@ module.exports = {
     lastName: { type: 'string' },
     email: { type: 'string' },
     password: { type: 'string' },
-    online: { type: 'boolean' },
+    online: {
+      type: 'boolean',
+      defaultsTo: true
+    },
+    chats: {
+      collection: 'ChatMessage',
+      via: 'user'
+    },
     purchases: {
       collection: 'Purchase',
       via: 'userId',

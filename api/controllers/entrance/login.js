@@ -51,8 +51,7 @@ module.exports = {
 
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
-        await User.updateOne({ id: this.req.session.userId })
-          .set({ online: true})
+        await User.updateOne({id: user.id}).set({online: true})
 
           throw { redirect: '/ebooks' }
       }
