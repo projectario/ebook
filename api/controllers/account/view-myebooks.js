@@ -1,3 +1,5 @@
+const Purchase = require("../../models/Purchase");
+
 module.exports = {
 
     friendlyName: 'View e book',
@@ -20,8 +22,10 @@ module.exports = {
             // sails.log(`user from view-book.js: ${user}`)
         }
 
+        let myebook = await Purchase.find({ userId: 4 });
         // let myebooks = await Book.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
-
+        console.log(user.id)
+        console.log(myebook)
         return { user };
     }
 
