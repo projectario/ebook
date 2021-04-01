@@ -21,7 +21,7 @@ module.exports = {
     rating: { type: 'number' },
     isBestSeller: { type: 'boolean' },
     isEditorChoice: { type: 'boolean' },
-    hasMovie: {type: 'boolean'},
+    movieId: {type: 'number'},
     coverUrl: { type: 'string' },
     purchases: {
       collection: 'Purchase',
