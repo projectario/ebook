@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  tableName: 'purchases',
+  tableName: 'userbooks',
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗

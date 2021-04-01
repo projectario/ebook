@@ -14,7 +14,7 @@ module.exports = {
     password: { type: 'string' },
     online: { type: 'boolean' },
     purchases: {
-      collection: 'Purchase',
+      collection: 'Userbook',
       via: 'userId',
     },
 

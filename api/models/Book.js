@@ -23,7 +23,7 @@ module.exports = {
     isEditorChoice: { type: 'boolean' },
     coverUrl: { type: 'string' },
     purchases: {
-      collection: 'Purchase',
+      collection: 'Userbook',
       via: 'bookId',
     }
 
