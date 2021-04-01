@@ -53,21 +53,21 @@ module.exports = {
         env.req.session.userId = null;
         return exits.loginPage({});
       }
-      // ChatMessage.create({
-      //   text: user.firstName + ' joined the room.'
-      // })
-      //   .meta({ fetch: true })
-      //   .exec(function (err, message) {
-      //     if (err) { return exits.serverError(err); }
-      //     // Blast the message to all connected sockets.
-      //     sails.sockets.blast('chatmessage', {
-      //       verb: 'created',
-      //       id: message.id,
-      //       data: {
-      //         text: message.text
-      //       }
-      //     });
-      //   });
+      ChatMessage.create({
+        text: user.firstName + ' joined the room.'
+      })
+        .meta({ fetch: true })
+        .exec(function (err, message) {
+          if (err) { return exits.serverError(err); }
+          // Blast the message to all connected sockets.
+          sails.sockets.blast('chatmessage', {
+            verb: 'created',
+            id: message.id,
+            data: {
+              text: message.text
+            }
+          });
+        });
       // Looks like this is a valid, logged-in, online user, so show the chat page.
       return exits.chatPage({
         loggedInUserId: env.req.session.userId,
