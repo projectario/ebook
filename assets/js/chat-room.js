@@ -81,7 +81,7 @@ ChatRoom.prototype.renderMessage = function(message, scroll) {
 
   // If the message has a user attached, add a regular chat line.
   if (message.user) {
-    chatLineEl = $('<div class="chat-line"><span class="username">' + message.user.username + ':&nbsp;</span><span class="text">' + message.text + '</span></div>');
+    chatLineEl = $('<div class="chat-line"><span class="username">' + message.user.firstName + ':&nbsp;</span><span class="text">' + message.text + '</span></div>');
   }
 
   // Otherwise add an "admin" chat line.

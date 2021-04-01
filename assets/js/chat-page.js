@@ -124,7 +124,7 @@ $(function() {
       }
 
       // Log the user out, and reload the page.
-      io.socket.put('/user/logout', {}, function (body, response) {
+      io.socket.patch('/user/logout', {}, function (body, response) {
         window.location.reload();
       });
 
