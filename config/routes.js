@@ -30,8 +30,8 @@ module.exports.routes = {
   // logout
   'GET /logout': { action: 'account/logout' },
   //chat
-  'GET /chat': { action: 'chat' },
-  'POST /chat': { action: 'chat' },
+  'GET /chat': { action: 'chat/chat' },
+  'POST /chat': { action: 'chat/chat' },
 
   'GET /ebooks': { view: 'pages/ebooks' },
 

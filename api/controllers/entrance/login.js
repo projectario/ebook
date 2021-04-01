@@ -51,7 +51,7 @@ module.exports = {
 
         sails.log("LOGGED IN!!")
         this.req.session.userId = user.id;
-        if (user.isKid) throw { redirect: '/kidsmovies' }
+        await User.updateOne({id: user.id}).set({online: true})
 
         throw { redirect: '/ebooks' }
       }
