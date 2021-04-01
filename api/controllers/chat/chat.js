@@ -16,12 +16,12 @@ module.exports = {
 
     loginPage: {
       responseType: 'view',
-      viewTemplatePath: 'login'
+      viewTemplatePath: 'pages/entrance/login'
     },
 
     chatPage: {
       responseType: 'view',
-      viewTemplatePath: 'chat'
+      viewTemplatePath: 'pages/chat/chat'
     }
 
   },
