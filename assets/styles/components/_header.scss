@@ -1,6 +1,12 @@
 .header {
   height: 40vh;
-  background-image: url(../images/Beach-and-eBook.jpg);
+  background-image: linear-gradient(
+      360deg,
+      rgba($color-light, 1) 0%,
+      rgba($color-light, 0.2) 20%,
+      rgba($color-light, 0.01) 100%
+    ),
+    url(../images/Beach-and-eBook.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 55%;
