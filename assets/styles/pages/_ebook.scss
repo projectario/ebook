@@ -22,10 +22,19 @@
       text-decoration: none;
       font-size: 20px;
       padding: 7px;
-      transition: all 0.2s linear;
+      transition: all 0.15s linear;
 
       &:hover {
         background-color: rgb(21, 83, 65);
+      }
+    }
+
+    .readNowBtn.purchased {
+      background-color: rgb(21, 83, 65);
+      transition: all 0.15s linear;
+      &:hover {
+        // background-color: $color-Purple;
+        background-color: rgb(46, 59, 172);
       }
     }
 
@@ -55,10 +64,17 @@
       line-height: 1.5;
     }
     .bookBS,
-    .bookEC {
+    .bookEC,
+    .hasMovie {
       color: $color-Purple;
       font-weight: 600;
     }
+
+    .detail.hasMovie {
+      text-decoration: none;
+      color: red;
+    }
+
     .detailValue {
       font-weight: 600;
     }

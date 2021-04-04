@@ -1,21 +1,7 @@
 module.exports = {
 
-    friendlyName: 'View e book',
+    friendlyName: 'View ebook details',
     description: 'Display eBook - id page.',
-
-
-    // inputs: {
-    //     genre: {
-    //         type: 'string',
-    //     },
-    //     isBestseller: {
-    //         type: 'boolean'
-    //     },
-    //     isEditorChoice: {
-    //         type: 'boolean'
-    //     }
-
-    // },
 
     exits: {
         success: {
@@ -23,20 +9,35 @@ module.exports = {
         }
     },
 
-
     fn: async function () {
-        // find the user that is logged in 
+        // If the user is logged in, find the user in db.
         let sessionUserId = this.req.session.userId;
-        // sails.log(`sessionUserId from view-book.js: ${sessionUserId}`)
         let user;
         if (sessionUserId) {
             user = await User.findOne({ id: sessionUserId });
-            // sails.log(`user from view-book.js: ${user}`)
         }
 
+        // Take the book id from the url and find the ebook details.
         let ebook = await Book.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
-        return { ebook, user };
+
+        // ===== Find if this ebook is owned by the logged in user. =====
+        let purchased = false;
+        if (user) {
+            // 1. Find the transactions of the logged in user.
+            let myebookTransactions = await Userbook.find({ userId: user.id }).meta({ skipRecordVerification: true });
+
+            // 2. Extract the bookId from the purchased ebooks.
+            let myBooksIds = []
+            myebookTransactions.forEach(transaction => {
+                myBooksIds.push(transaction.bookId)
+            });
+
+            // Check if current ebook is included in my ebooks.
+            purchased = myBooksIds.includes(ebook.id);
+        }
+
+        return { ebook, user, purchased };
     }
 
 
