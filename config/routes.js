@@ -57,7 +57,14 @@ module.exports.routes = {
   'POST /account/name': { action: 'account/settings/update-name' },
 
   // Admin
-  'GET /admin' : {action: 'admin/view-admin'}
+  'GET /admin' : {action: 'admin/view-admin'},
+    // users CRUD
+  'GET /admin/users' : {action: 'admin/view-users'},
+  'GET /admin/users/:id' : {action: 'admin/modify-user'},
+    // books CRUD
+  'GET /admin/books' : {action: 'admin/view-books'},
+  'GET /admin/books/:id' : {action: 'admin/modify-books'},
+  'POST /admin/books/:id' : {action: 'admin/book-update'},
 
 
   /***************************************************************************
