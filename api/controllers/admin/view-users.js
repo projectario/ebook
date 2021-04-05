@@ -10,14 +10,18 @@ module.exports = {
     exits: {
 
         success: {
-            viewTemplatePath: 'admin/admin'
+            viewTemplatePath: 'admin/userList'
         }
 
     },
 
 
     fn: async function () {
-        user = await User.findOne({ id: this.req.session.userId })
-        return { user }
+        loggedInUser = await User.findOne({ id: this.req.session.userId })
+
+        let users = await User.find().meta({ skipRecordVerification: true });
+
+
+        return { loggedInUser, users }
     }
 }

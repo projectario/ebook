@@ -10,7 +10,7 @@ module.exports = {
     exits: {
 
         success: {
-            viewTemplatePath: 'admin/admin'
+            viewTemplatePath: 'admin/bookList'
         }
 
     },
@@ -18,6 +18,11 @@ module.exports = {
 
     fn: async function () {
         user = await User.findOne({ id: this.req.session.userId })
-        return { user }
+
+        let books = await Book.find().meta({ skipRecordVerification: true });
+
+
+        
+        return { user, books }
     }
 }
