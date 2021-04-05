@@ -6,11 +6,14 @@
       src="/images/eBooksImg/<%= ebook.coverUrl %>"
       alt="Book's Cover Photo"
     />
-    <a href="" class="readNowBtn">Read Now</a>
-
+    <% if(purchased) {%>
+    <a href="/reader/<%= ebook.id %>" class="readNowBtn purchased">Read Now</a>
+    <% } else { %>
+    <a href="/payment/<%= ebook.id %>" class="readNowBtn">Add to my list</a>
     <div class="price">
       Price: <span class="priceValue"><%= ebook.price %> €</span>
     </div>
+    <% } %>
   </div>
 
   <div class="cardRight">
@@ -46,11 +49,15 @@
       </span>
       <% } %>
       <!-- Has Movie -->
-      <%if(ebook.movieId !=0) {%> 
-      <span>
-        <a href="#">Watch the movie</a>
+      <%if(ebook.movieId !=0) {%>
+      <span class="detail hasMovie">
+        <a
+          href="http://localhost:1338/title/<%= ebook.movieId %>"
+          target="_blank"
+          ><i class="fas fa-film"></i> Available at MovieClub</a
+        >
       </span>
-      <% } %> 
+      <% } %>
     </div>
   </div>
 </div>

@@ -3,12 +3,40 @@
 <script src="/js/user-list.js"></script>
 <script src="/js/chat-page.js"></script> -->
 
-<div class="chat-page">
-  <div class="header">
-    <h1>Welcome to SailsChat, <%= username %>!</h1>
-    <span class="logout">click here to log out</span>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+</head>
+
+<div class="navbar">
+  <div class="navbar__logo">
+    <a href="/"><i class="fas fa-atlas"></i>eBook</a>
   </div>
 
+  <div class="navbar__options">
+    <div class="navbar__option">
+      <a href="/faq">FAQ<i class="fas fa-info-circle"></i></a>
+    </div>
+
+    <div class="navbar__option">
+      <a href="/chat">Chat<i class="fas fa-comment-dots"></i></a>
+    </div>
+
+    <div class="navbar__option">
+      <a href="/myebooks"><%= username %><i class="fas fa-book-open"></i></a>
+    </div>
+
+    <div class="navbar__option">
+      <a href="/account">Settings<i class="fas fa-cog"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="chat-page">
   <div class="main">
     <div class="chat-room-section">
       <div class="chat-transcript-container">
@@ -27,7 +55,7 @@
     </div>
 
     <div class="user-list-section">
-      <div class="header">Users</div>
+      <div class="header-users">Users</div>
       <ul class="user-list"></ul>
     </div>
   </div>

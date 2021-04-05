@@ -42,6 +42,8 @@ module.exports.routes = {
   //===============   Account   ===========================
   'GET /myebooks': { action: 'account/view-myebooks' },
   'GET /bookreader/:id': { action: 'account/view-bookReader' },
+  'GET /payment/:id': { action: 'account/view-payment' },
+  'POST /payment/:id': { action: 'account/payment' },
 
 
   //===============   Account Settings   ==================

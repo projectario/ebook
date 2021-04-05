@@ -21,11 +21,11 @@ module.exports = {
         let sessionUserId = this.req.session.userId;
         let user;
         if (sessionUserId) {
-            user = await User.findOne({ id: sessionUserId });
+            user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true });
         }
 
         // Find the transactions of the logged in user.
-        let myebookTransactions = await Userbook.find({ userId: user.id }).meta({ skipRecordVerification: true });;
+        let myebookTransactions = await Userbook.find({ userId: user.id }).meta({ skipRecordVerification: true });
 
         // Extract the bookId from the purchased ebooks.
         let myBooksIds = []
@@ -34,7 +34,7 @@ module.exports = {
         });
 
         // Find my eBooks
-        let mylistOfBooks = await Book.find({ id: myBooksIds })
+        let mylistOfBooks = await Book.find({ id: myBooksIds }).meta({ skipRecordVerification: true });
 
         return { user, mylistOfBooks };
     }

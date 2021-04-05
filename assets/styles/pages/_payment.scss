@@ -1,0 +1,81 @@
+.paymentContainer {
+  // margin-top: 15vh;
+  width: 800px;
+  margin: 15vh auto;
+  @include flex-row;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+
+  .paymentCard {
+    font-size: 1.1rem;
+    color: white;
+    margin: 20px;
+    @include flex-column;
+    width: 450px;
+    height: 310px;
+    background-color: rgb(22, 53, 110);
+    border-radius: 20px;
+    padding: 30px;
+
+    .paymentInfo {
+      // margin-bottom: 10px;
+      @include flex-row;
+      justify-content: space-between;
+      .fa-cc-paypal {
+        font-size: 2.5rem;
+        text-align: right;
+      }
+    }
+
+    input,
+    select {
+      font-size: 1.1rem;
+      padding: 3px 6px;
+      margin-bottom: 7px;
+      &:focus {
+        outline: none;
+      }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+    .cardDataCVV {
+      @include flex-row;
+      justify-content: space-between;
+    }
+    .cvv {
+      width: 50px;
+    }
+    .svvSection {
+      width: 200px;
+    }
+    .priceAndBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+
+      .ebookPrice {
+        margin-right: 20px;
+      }
+      .buyNow {
+        font-size: 1.2rem;
+        background-color: rgb(245, 30, 30);
+        border-radius: 5px;
+        padding: 3px 10px;
+        color: white;
+        transition: all 0.15s linear;
+        &:hover {
+          // background-color: $color-Purple;
+          background-color: rgb(175, 29, 97);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
