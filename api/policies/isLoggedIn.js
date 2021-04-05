@@ -14,12 +14,12 @@
       // Look up the user whose ID is in the session.
       User.findOne({id: req.session.userId}).exec(function(err, user) {
         if (err) { return res.serverError(err);}
-        if (!user) { return res.forbidden(); }
+        if (!user) { return res.forbidden('fdsgdfg'); }
   
         // If the user is not online, remove their ID from the session and return a 404.
         if (!user.online) {
           req.session.userId = null;
-          return res.forbidden();
+          return res.forbidden('sadfasdfas');
         }
   
         // User is logged in, so we can continue!
@@ -32,6 +32,6 @@
   
     //--•
     // No user is logged in, so return the "forbidden" response.
-    return res.forbidden();
+    return res.forbidden('asdf');
   
   };
