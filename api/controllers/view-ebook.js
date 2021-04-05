@@ -21,7 +21,7 @@ module.exports = {
         let ebook = await Book.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
 
-        // ===== Find if this ebook is owned by the logged in user. =====
+        // =========== Find if this ebook is owned by the logged in user. ===========
         let purchased = false;
         if (user) {
             // 1. Find the transactions of the logged in user.
