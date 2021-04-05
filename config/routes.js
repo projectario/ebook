@@ -30,7 +30,8 @@ module.exports.routes = {
   'POST /login': { action: 'entrance/login' },
   // logout
   'GET /logout': { action: 'account/logout' },
-  //chat
+
+  // chat
   'GET /chat': { action: 'chat/chat' },
   'POST /chat': { action: 'chat/chat' },
 
@@ -42,7 +43,7 @@ module.exports.routes = {
   'GET /myebooks': { action: 'account/view-myebooks' },
   'GET /bookreader/:id': { action: 'account/view-bookReader' },
 
-  // Chat
+
   //===============   Account Settings   ==================
   'GET /account': { action: 'account/account-settings' },
   //Update password
@@ -55,6 +56,8 @@ module.exports.routes = {
   'GET /account/name': { action: 'account/settings/view-edit-name' },
   'POST /account/name': { action: 'account/settings/update-name' },
 
+  // Admin
+  'GET /admin' : {action: 'admin/view-admin'}
 
 
   /***************************************************************************
