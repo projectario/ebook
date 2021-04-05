@@ -17,6 +17,12 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': 'isLoggedIn',
+  'admin/*': 'isAdmin',
+  'view-homepage' : true, 
+  'view-ebooks' : true, 
+  'view-ebook' : true, 
+  'entrance/*': true,
+  'logout': true,
 
 };

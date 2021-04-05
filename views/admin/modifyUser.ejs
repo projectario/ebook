@@ -1,0 +1,21 @@
+<div>
+
+  <form class="form" method="post">
+    <label for="id">ID: </label>
+    <input type="text" name="id" value='<%= user.id %>' disabled>
+    <label for="firstName">First Name: </label>
+    <input type="text" name="firstName" value='<%= user.firstName %>'>
+    <label for="lastName">Last Name: </label>
+    <input type="text" name="lastName" value='<%= user.lastName %>'>
+    <label for="password">Password: </label>
+    <input type="text" name="password" value='<%= user.password %>' disabled>
+    <label for="admin">Admin: </label>
+    <select name="admin" id="admin">
+      <option value="<%= user.isAdmin %>"><%= user.isAdmin %></option>
+      <option value="<%= !user.isAdmin %>"><%= !user.isAdmin %></option>
+    </select>
+    <a href="/admin/users/delete/<%= user.id %>"><button>Delete User</button></a>
+  </form>
+</div>
+<div>
+</div>
