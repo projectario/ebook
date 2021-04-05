@@ -12,6 +12,9 @@
 
 <main>
   <div>
+    <a href="/admin/books/create"><button>Create Book</button></a>
+  </div>
+  <div>
       <% for (let i = 0; i < books.length; i++) {%>
       <div id="<%= books[i].id %>">
         Title: <%= books[i].title %>

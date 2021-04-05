@@ -65,6 +65,8 @@ module.exports.routes = {
     // books CRUD
   'GET /admin/books' : {action: 'admin/view-books'},
   'GET /admin/books/:id' : {action: 'admin/modify-books'},
+  'GET /admin/books/create' : {action: 'admin/view-create-book'},
+  'POST /admin/books/create' : {action: 'admin/create-book'},
   'POST /admin/books/:id' : {action: 'admin/book-update'},
 
 
