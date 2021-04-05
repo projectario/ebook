@@ -1,0 +1,57 @@
+<%- partial('../partials/head.ejs') %>
+<%- partial('../partials/navbar.ejs') %>
+
+<header class="header">
+  <div class="landing">
+    <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
+    <h3 class="sub-heading">
+      Modify - Βοοκ
+    </h3>
+  </div>
+</header>
+
+<main>
+  <div class="form">
+     <form action="" method="post">
+         <label for="id">ID:</label>
+         <input type="text" name="id" value="<%= book.id %>" disabled><br />
+
+         <label for="title">Title:</label>
+         <input type="text" name="title" value="<%= book.title %>"><br />
+         
+         <label for="author">Author:</label>
+         <input type="text" name="author" value="<%= book.author %>"><br />
+         
+         <label for="price">Price:</label>
+         <input type="text" name="price" value="<%= book.price %>"><br />
+         
+         <label for="description">Description:</label>
+         <textarea name="description"> <%= book.description %> </textarea><br />
+         
+         <label for="language">Language:</label>
+         <input type="text" name="language" value="<%= book.language %>"><br />
+         
+         <label for="releasedYear">Released Year:</label>
+         <input type="text" name="releasedYear" value="<%= book.releasedYear %>" placeholder="<%= book.releasedYear %>"><br />
+
+         <label for="rating">Rating:</label>
+         <input type="text" name="rating" value="<%= book.rating %>" placeholder="<%= book.rating %>"><br />
+
+         <label for="isBestSeller">Best Seller:</label>
+         <select id="isBestSeller" name="isBestSeller">
+            <option value="<%= book.isBestSeller %>"><%= book.isBestSeller %></option>
+            <option value="<%= !book.isBestSeller %>"><%= !book.isBestSeller %></option>
+         </select><br/>
+         <label for="isEditorChoice">Editor Choice:</label>
+         <select id="isEditorChoice" name="isEditorChoice">
+            <option value="<%= book.isEditorChoice %>"><%= book.isEditorChoice %></option>
+            <option value="<%= !book.isEditorChoice %>"><%= !book.isEditorChoice %></option>
+         </select><br/>
+
+         <label for="movieId">Movie ID:</label>
+         <input type="text" name="movieId" value="<%= book.movieId %>" placeholder="<%= book.movieId %>"><br />
+
+         <input type="submit" name="submit" id="Submit" value="Submit">
+     </form>
+  </div>
+</main>
