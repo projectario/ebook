@@ -1,0 +1,135 @@
+<%- partial('../../partials/head.ejs') %> <%-
+partial('../../partials/navbar.ejs') %>
+
+<div class="paymentContainer">
+  <div class="bookCard">
+    <img src="/images/eBooksImg/<%= ebook.coverUrl %>" alt="ebookCoverPhoto" />
+    <p class="bookTitle"><%= ebook.title %></p>
+    <p class="bookAuthor"><%= ebook.author %></p>
+    <div class="bookDetails">
+      <span class="bookRating"
+        >Rating:
+        <span class="bookRatingValue"> <%= ebook.rating %> </span>
+      </span>
+      <span class="bookBS">
+        <%if(ebook.isBestSeller) {%>
+        <i class="fas fa-star"></i>
+        <% } %>
+      </span>
+      <span class="bookEC">
+        <%if(ebook.isEditorChoice) {%>
+        <i class="fas fa-bookmark"></i>
+        <% } %>
+      </span>
+    </div>
+  </div>
+
+  <form action="/payment/<%= ebook.id %>" method="POST" class="paymentCard">
+    <div class="paymentInfo">
+      <span>Payment Information</span>
+      <i class="fab fa-cc-paypal"></i>
+    </div>
+
+    <label for="cardNumber">Card Number</label>
+    <input
+      type="number"
+      name="cardNumber"
+      id="cardNumber"
+      placeholder="**** **** **** ****"
+      pattern="[0-9]{13,16}"
+      title="Enter a valid card number between 13 and 16 numbers"
+      required
+    />
+    <label for="cardHolder">Name</label>
+    <input
+      type="text"
+      name="cardHolder"
+      id="cardHolder"
+      placeholder="JOHN SMITH"
+      title="Enter your Full Name"
+      class="input"
+      required
+      pattern="[A-Za-z]{5-30}"
+    />
+    <div class="cardDataCVV">
+      <div class="expDate">
+        <label for="expiry-month">Valid Thru</label>
+        <div class="expDateSelections">
+          <select id="expiry-month" required>
+            <option
+              id="trans-label_month"
+              value=""
+              default="default"
+              selected="selected"
+              class="expMonth"
+            >
+              Month
+            </option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <select id="expiry-year" required>
+            <option
+              id="trans-label_year"
+              value=""
+              default=""
+              selected="selected"
+              class="expYear"
+            >
+              Year
+            </option>
+            <option value="2021">21</option>
+            <option value="2022">22</option>
+            <option value="2023">23</option>
+            <option value="2024">24</option>
+            <option value="2025">25</option>
+            <option value="2026">26</option>
+            <option value="2027">27</option>
+            <option value="2028">28</option>
+            <option value="2029">29</option>
+            <option value="2030">30</option>
+          </select>
+        </div>
+      </div>
+      <div class="cvvSection">
+        <label for="cvv">CVV</label>
+        <div>
+          <input
+            type="number"
+            name="cvv"
+            id="cvv"
+            class="cvv"
+            placeholder="***"
+            title="Enter the CVV of your card"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      type="hidden"
+      id="ebookPrice"
+      name="ebookPrice"
+      value="<%= ebook.price %>"
+    />
+    <div class="priceAndBtn">
+      <span class="ebookPrice">Price: <%= ebook.price %> €</span>
+      <button type="submit" class="buyNow readNowBtn">BUY NOW</button>
+      <!-- <a
+        href="/paymentok/ ebook.id / ebook.price "
+        class="buyNow readNowBtn"
+        >BUY NOW</a
+      > -->
+    </div>
+  </form>
+</div>

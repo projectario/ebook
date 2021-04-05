@@ -7,7 +7,7 @@
       alt="Book's Cover Photo"
     />
     <% if(purchased) {%>
-    <a href="" class="readNowBtn purchased">Read Now</a>
+    <a href="/reader/<%= ebook.id %>" class="readNowBtn purchased">Read Now</a>
     <% } else { %>
     <a href="/payment/<%= ebook.id %>" class="readNowBtn">Add to my list</a>
     <div class="price">
