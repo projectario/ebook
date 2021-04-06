@@ -11,7 +11,7 @@
  * Constructor
  * @param {object} app A reference to the main chat page app.
  */
-function UserList (app) {
+function UserList(app) {
 
   this.users = app.users;
 
@@ -33,13 +33,13 @@ UserList.prototype.init = function () {
  * Add a new user to the list
  * @param {object} user The user object.
  */
-UserList.prototype.addNewUserToList = function(user) {
+UserList.prototype.addNewUserToList = function (user) {
 
   // Get the user list element.
   var userListEl = $('.chat-page .user-list');
 
   // Create the new user item.
-  var userEl = $('<li >'+ user.firstName +'</li>'); //data-id="' + user.id + '" missing code from <li>
+  var userEl = $('<li class="chat-container__users-item">' + user.firstName + '</li>'); //data-id="' + user.id + '" missing code from <li>
   console.log(user.firstName);
   // If the new user is offline, add the "offline" class.
   if (!user.online) {
@@ -56,7 +56,7 @@ UserList.prototype.addNewUserToList = function(user) {
  * @param  {number}  userId   The ID of the user to update.
  * @param  {Boolean} isOnline Whether or not the user is currently online.
  */
-UserList.prototype.updateUserStatus = function(userId, isOnline) {
+UserList.prototype.updateUserStatus = function (userId, isOnline) {
 
   // Get the user item element.
   var userEl = $('.chat-page .user-list '); //[data-id=' + userId + '] missing code
