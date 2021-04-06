@@ -1,4 +1,13 @@
 module.exports = {
+    
+    exits: {
+        
+        redirect: {
+            responseType: 'redirect'
+        }
+    },
+    
+    
     inputs: {
         title: { type: 'string' },
         author: { type: 'string' },
@@ -11,18 +20,8 @@ module.exports = {
         isBestSeller: { type: 'boolean' },
         isEditorChoice: { type: 'boolean' },
         movieId: { type: 'number' },
+        coverUrl: { type: 'string' },
     },
-
-    exits: {
-        success: {
-            viewTemplatePath: 'admin/createBook'
-        },
-        redirect: {
-            responseType: 'redirect'
-        }
-    },
-
-    inputs: {},
 
 
     fn: async function ({ 
@@ -36,8 +35,10 @@ module.exports = {
         rating,
         isBestSeller,
         isEditorChoice,
-        movieId }) {
+        movieId,
+        coverUrl }) {
 
+            sails.log(title)
         let createdBook = await Book.create({ 
             title,
             author,
@@ -49,10 +50,11 @@ module.exports = {
             rating,
             isBestSeller,
             isEditorChoice,
-            movieId 
+            movieId,
+            coverUrl
         })
         .fetch();
-        sails.log(`new book was create with ID: ${createdBook.id}`);
+        sails.log(`new book was create with ID: ${createdBook.title}`);
 
         throw { redirect: '/admin/books' };
 
