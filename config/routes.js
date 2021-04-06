@@ -45,6 +45,8 @@ module.exports.routes = {
   'GET /payment/:id': { action: 'account/view-payment' },
   'POST /payment/:id': { action: 'account/payment' },
 
+  'GET /faq': { action: 'view-faq' },
+
 
   //===============   Account Settings   ==================
   'GET /account': { action: 'account/account-settings' },
