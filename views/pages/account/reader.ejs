@@ -1,0 +1,142 @@
+<%- partial('../../partials/head.ejs') %> <%-
+partial('../../partials/navbar.ejs') %>
+
+<div class="readerBody">
+  <div class="ebookCover">
+    <div class="book">
+      <label for="page-1" class="book__page book__page--1">
+        <img
+          src="/images/eBooksImg/<%=ebook.coverUrl %>"
+          alt="photo cover"
+          class="bookCoverImg"
+        />
+      </label>
+
+      <label for="page-2" class="book__page book__page--4">
+        <div class="page__content">
+          <h1 class="page__content-title">I</h1>
+          <div class="page__content-blockquote">
+            <p class="page__content-blockquote-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut,
+              nihil ad id tempore deserunt distinctio nam. Iure temporibus quia
+              numquam quasi fugiat, omnis praesentium id voluptatibus
+              consequatur expedita labore culpa cumque? Adipisci sint ex
+              quisquam quo molestias perferendis enim aut reiciendis illo libero
+              doloremque rem expedita quam, iste eligendi accusantium
+              consequuntur veritatis repudiandae! Repellat quis itaque
+              consectetur maxime.
+            </p>
+            <p class="page__content-blockquote-text">
+              . . . In, ipsa ad! Consequuntur aut, eligendi quae neque veritatis
+              delectus ab et, voluptatibus enim, blanditiis accusantium ullam
+              ducimus optio mollitia consequatur! Pariatur velit dolorum facilis
+              fugiat ut quo deserunt. Est quod eaque deserunt corporis incidunt
+              labore doloribus sed? .. . . .
+            </p>
+            <p class="page__content-blockquote-text">
+              . . . Maiores quam consectetur unde nobis eaque. Ducimus cumque
+              autem cupiditate dolorum? Et facilis modi delectus praesentium nam
+              neque, quae inventore. Dignissimos ullam nobis recusandae placeat,
+              quas, quia a ipsam at exercitationem natus reprehenderit expedita
+              iusto, fugiat earum soluta accusantium unde molestiae non. . . .
+            </p>
+            <span class="page__content-blockquote-reference"
+              >Encyclopedia Galactica*</span
+            >
+          </div>
+          <div class="page__content-text">
+            <p>
+              Consectetur debitis necessitatibus, illum doloremque a dolorem
+              reiciendis eum nostrum aspernatur quos labore laborum fugiat eius
+              ut dicta nobis voluptatum minima autem deserunt dolores iusto
+              nulla! Rerum quas ducimus quaerat! Exercitationem veniam, iure
+              quas cum? Mollitia vero eum doloremque ipsa, itaque modi pariatur
+              natus consectetur? Sunt perspiciatis ipsam totam recusandae
+              incidunt repellendus exercitationem quisquam explicabo.
+            </p>
+
+            <p>
+              Fuga, ex nemo dolorum ab reprehenderit alias doloremque eum, animi
+              tempore consequuntur rerum! Quisquam iusto distinctio quidem
+              voluptate nemo quis ut reiciendis enim impedit ea minima officiis
+              eligendi deleniti amet omnis nisi architecto, ipsum eius. Eum
+              harum natus eveniet voluptate labore eaque quia reprehenderit
+              assumenda!
+            </p>
+          </div>
+          <div class="page__number">3</div>
+        </div>
+      </label>
+
+      <!-- Resets the page -->
+      <input type="radio" name="page" id="page-1" />
+
+      <!-- Goes to the second page -->
+      <input type="radio" name="page" id="page-2" />
+      <label class="book__page book__page--2">
+        <div class="book__page-front">
+          <div class="page__content">
+            <h1 class="page__content-book-title"><%= ebook.title %></h1>
+            <h2 class="page__content-author"><%= ebook.author %></h2>
+
+            <p class="page__content-credits">
+              Team Credits
+              <span>Andreas Koutroulis</span>
+            </p>
+            <p class="page__content-credits">
+              <span>Nektarios Mpanousi</span>
+            </p>
+            <p class="page__content-credits">
+              <span>Anastasia Kounoupi</span>
+            </p>
+            <p class="page__content-credits">
+              <span>Petros Foutsis</span>
+            </p>
+            <p class="page__content-credits">
+              <span>Grigoris Palaiohoritis</span>
+            </p>
+
+            <div class="page__content-copyright">
+              <p>The JS TEAM Society</p>
+              <p>Athens - 2021</p>
+            </div>
+          </div>
+        </div>
+        <div class="book__page-back">
+          <div class="page__content">
+            <h1 class="page__content-title">Contents</h1>
+            <table class="page__content-table">
+              <tr>
+                <td align="left">Part I</td>
+                <td align="left">The Psycohistorians</td>
+                <td align="right">3</td>
+              </tr>
+              <tr>
+                <td align="left">Part II</td>
+                <td align="left">The Encyclopedists</td>
+                <td align="right">43</td>
+              </tr>
+              <tr>
+                <td align="left">Part III</td>
+                <td align="left">The Mayors</td>
+                <td align="right">87</td>
+              </tr>
+              <tr>
+                <td align="left">Part IV</td>
+                <td align="left">The Traders</td>
+                <td align="right">147</td>
+              </tr>
+              <tr>
+                <td align="left">Part V</td>
+                <td align="left">The Merchant Princes</td>
+                <td align="right">173</td>
+              </tr>
+            </table>
+
+            <div class="page__number">2</div>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
