@@ -37,17 +37,17 @@ module.exports = {
 
         
         await Book.updateOne({id: this.req.params.id}).set({
-            title: inputs.title.trim(),
-            author: inputs.author.trim(),
-            genre: inputs.genre.trim(),
-            price: inputs.price.trim(),
-            description: inputs.description.trim(),
-            language: inputs.language.trim(),
-            releasedYear: parseInt(inputs.releasedYear).trim(),
-            rating: parseInt(inputs.rating).trim(),
-            isBestSeller: inputs.isBestSeller.trim(),
-            isEditorChoice: inputs.isEditorChoice.trim(),
-            movieId: parseInt(inputs.movieId).trim(),
+            title: inputs.title,
+            author: inputs.author,
+            genre: inputs.genre,
+            price: inputs.price,
+            description: inputs.description,
+            language: inputs.language,
+            releasedYear: parseInt(inputs.releasedYear),
+            rating: parseInt(inputs.rating),
+            isBestSeller: inputs.isBestSeller,
+            isEditorChoice: inputs.isEditorChoice,
+            movieId: parseInt(inputs.movieId),
         })
 
         throw { redirect: '/admin/books' }
