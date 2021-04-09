@@ -7,6 +7,9 @@ module.exports = {
     exits: {
         success: {
             viewTemplatePath: 'pages/account/payment'
+        },
+        redirect: {
+            responseType: 'redirect'
         }
     },
 
