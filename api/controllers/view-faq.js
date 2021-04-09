@@ -18,8 +18,14 @@ module.exports = {
 
   fn: async function () {
 
-    // Respond with view.
-    return {};
+    // find the user that is logged in 
+    let sessionUserId = this.req.session.userId;
+    let user;
+    if (sessionUserId) {
+      user = await User.findOne({ id: sessionUserId }).meta({ skipRecordVerification: true });
+    }
+
+    return { user };
 
   }
 
