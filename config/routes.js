@@ -22,6 +22,9 @@ module.exports.routes = {
   // ===========   No policies here   =====================
   // Homepage
   '/': { action: 'view-homepage' },
+  'GET /ebooks': { action: 'view-ebooks' },
+  'GET /title/:id': { action: 'view-ebook' },
+  'GET /faq': { action: 'view-faq' },
   // signup
   'GET /signup': { action: 'entrance/view-signup' },
   'POST /signup': { action: 'entrance/signup' },
@@ -31,21 +34,14 @@ module.exports.routes = {
   // logout
   'GET /logout': { action: 'account/logout' },
 
-  // chat
-  'GET /chat': { action: 'chat/chat' },
-  'POST /chat': { action: 'chat/chat' },
-
-
-  'GET /ebooks': { action: 'view-ebooks' },
-  'GET /title/:id': { action: 'view-ebook' },
-
   //===============   Account   ===========================
   'GET /myebooks': { action: 'account/view-myebooks' },
   'GET /reader/:id': { action: 'account/view-bookreader' },
   'GET /payment/:id': { action: 'account/view-payment' },
   'POST /payment/:id': { action: 'account/payment' },
-
-  'GET /faq': { action: 'view-faq' },
+  // chat
+  'GET /chat': { action: 'chat/chat' },
+  'POST /chat': { action: 'chat/chat' },
 
 
   //===============   Account Settings   ==================
@@ -60,18 +56,18 @@ module.exports.routes = {
   'GET /account/name': { action: 'account/settings/view-edit-name' },
   'POST /account/name': { action: 'account/settings/update-name' },
 
-  // Admin
-  'GET /admin' : {action: 'admin/view-admin'},
-    // users CRUD
-  'GET /admin/users' : {action: 'admin/view-users'},
-  'GET /admin/users/:id' : {action: 'admin/modify-user'},
-  'POST /admin/users/:id' : {action: 'admin/delete-user'},
-    // books CRUD
-  'GET /admin/books' : {action: 'admin/view-books'},
-  'GET /admin/books/:id' : {action: 'admin/modify-books'},
-  'GET /admin/books/create' : {action: 'admin/view-create-book'},
-  'POST /admin/books/create' : {action: 'admin/create-book'},
-  'POST /admin/books/:id' : {action: 'admin/book-update'},
+  // =================   Admin   ==============================
+  'GET /admin': { action: 'admin/view-admin' },
+  // users CRUD
+  'GET /admin/users': { action: 'admin/view-users' },
+  'GET /admin/users/:id': { action: 'admin/modify-user' },
+  'POST /admin/users/:id': { action: 'admin/delete-user' },
+  // books CRUD
+  'GET /admin/books': { action: 'admin/view-books' },
+  'GET /admin/books/:id': { action: 'admin/modify-books' },
+  'GET /admin/books/create': { action: 'admin/view-create-book' },
+  'POST /admin/books/create': { action: 'admin/create-book' },
+  'POST /admin/books/:id': { action: 'admin/book-update' },
 
 
   /***************************************************************************

@@ -57,19 +57,19 @@ module.exports = {
       }
       // Search by (isBestSeller) and by (Genre AND isBestSeller) and by price
       if ((genre == 'All' || genre == 'Genre') && isBestSeller) {
-        listOfBooks = await Book.find({ isBestSeller: isBestSeller }).meta({ skipRecordVerification: true });
+        listOfBooks = await Book.find({ isBestSeller: isBestSeller, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       } else if (isBestSeller) {
         listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       }
       // Search by (isEditorChoice) and by (Genre AND isEditorChoice) and by price
       if ((genre == 'All' || genre == 'Genre') && isEditorChoice) {
-        listOfBooks = await Book.find({ isEditorChoice: isEditorChoice }).meta({ skipRecordVerification: true });
+        listOfBooks = await Book.find({ isEditorChoice: isEditorChoice, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       } else if (isEditorChoice) {
         listOfBooks = await Book.find({ genre: genre, isEditorChoice: isEditorChoice, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       }
       // Search by (isBestSeller AND isEditorChoice) and by (Genre AND (isBestSeller AND isEditorChoice)) and by price
       if ((genre == "All" || genre == 'Genre') && isBestSeller && isEditorChoice) {
-        listOfBooks = await Book.find({ or: [{ isBestSeller: isBestSeller }, { isEditorChoice: isEditorChoice }] }).meta({ skipRecordVerification: true });
+        listOfBooks = await Book.find({ or: [{ isBestSeller: isBestSeller }, { isEditorChoice: isEditorChoice }], price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       } else if (isBestSeller && isEditorChoice) {
         listOfBooks = await Book.find({ genre: genre, isBestSeller: isBestSeller, isEditorChoice: isEditorChoice, price: { '<=': parseInt(price) } }).meta({ skipRecordVerification: true });
       }

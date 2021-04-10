@@ -19,10 +19,11 @@ module.exports.policies = {
 
   '*': 'isLoggedIn',
   'admin/*': 'isAdmin',
-  'view-homepage' : true, 
-  'view-ebooks' : true, 
-  'view-ebook' : true, 
+  'view-homepage': true,
+  'view-ebooks': true,
+  'view-ebook': true,
   'entrance/*': true,
   'logout': true,
+  'view-faq': true
 
 };
