@@ -10,19 +10,19 @@
   </div>
 </header>
 
-<main>
+<main class="container">
   <div>
-    <a href="/admin/books/create"><button>Create Book</button></a>
+    <a href="/admin/books/create"><button class="btn-create">Create Book</button></a>
   </div>
-  <div>
+  <div class="user_parent">
       <% for (let i = 0; i < books.length; i++) {%>
-      <div id="<%= books[i].id %>">
-        Title: <%= books[i].title %>
-        Author: <%= books[i].author %>
-        Genre: <%= books[i].genre %>
-        Language: <%= books[i].language %>
+      <div class="user_tabs" id="<%= books[i].id %>">
+        Title: <%= books[i].title %><br />
+        Author: <%= books[i].author %><br />
+        Genre: <%= books[i].genre %><br />
+        Language: <%= books[i].language %><br />
+        <a href="/admin/books/<%= books[i].id %> "><button class="btn">View Book</button></a>
     </div>
-      <a href="/admin/books/<%= books[i].id %> "><button>View Book</button></a>
       <% } %>
   </div>
 </main>

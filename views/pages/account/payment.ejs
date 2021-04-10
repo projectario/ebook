@@ -7,8 +7,7 @@ partial('../../partials/navbar.ejs') %>
     <p class="bookTitle"><%= ebook.title %></p>
     <p class="bookAuthor"><%= ebook.author %></p>
     <div class="bookDetails">
-      <span class="bookRating"
-        >Rating:
+      <span class="bookRating">Rating:
         <span class="bookRatingValue"> <%= ebook.rating %> </span>
       </span>
       <span class="bookBS">
@@ -24,8 +23,8 @@ partial('../../partials/navbar.ejs') %>
     </div>
   </div>
 
-  <form action="/payment/<%= ebook.id %>" method="POST" class="paymentCard">
-    <div class="paymentInfo">
+  <form action="/payment/<%= ebook.id %>" method="POST" class="paymentCard" style="display: none;">
+    <!-- <div class="paymentInfo">
       <span>Payment Information</span>
       <i class="fab fa-cc-paypal"></i>
     </div>
@@ -120,16 +119,39 @@ partial('../../partials/navbar.ejs') %>
       type="hidden"
       id="ebookPrice"
       name="ebookPrice"
-      value="<%= ebook.price %>"
+      value="<%=// ebook.price %>"
     />
     <div class="priceAndBtn">
-      <span class="ebookPrice">Price: <%= ebook.price %> €</span>
+      <span class="ebookPrice">Price: <%=// ebook.price %> €</span>
       <button type="submit" class="buyNow readNowBtn">BUY NOW</button>
       <!-- <a
         href="/paymentok/ ebook.id / ebook.price "
         class="buyNow readNowBtn"
-        >BUY NOW</a
-      > -->
-    </div>
+        >BUY NOW
+      </a> -->
+    <!-- </div> -->
+    <input
+      type="hidden"
+      id="ebookPrice"
+      name="ebookPrice"
+      value="<%= ebook.price %>"
+    />
   </form>
+
+  <div id="paypal-button-container">
+    <div>
+      <div>
+        <h1>Price Details</h1>
+        <span>Product: <%= ebook.title %> </span>
+        <hr />
+        <span>Amount: <span class="amount_span"><%= ebook.price %> €</span> </span>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script
+  src="https://www.paypal.com/sdk/js?client-id=AUeuOhJDawn5hZNOdpVcjv1t4n3sG1vUCu9kq-SOUzQxTlwNPPib4P8NdHz9Z4MXa4yrBnpiqDgdRWiT&disable-funding=credit,card">
+  // Replace YOUR_CLIENT_ID with your sandbox client ID
+
+</script>

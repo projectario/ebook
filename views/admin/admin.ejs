@@ -1,20 +1,18 @@
 <%- partial('../partials/head.ejs') %>
-  <%- partial('../partials/navbar.ejs') %>
+<%- partial('../partials/navbar.ejs') %>
 
 <header class="header">
-      <div class="landing">
-        <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
-        <h3 class="sub-heading">
-          Admin Page 
-        </h3>
-      </div>
-    </header>
+  <div class="landing">
+    <!-- <h3 class="quote">Endless entertainment and knowledge in your pocket</h3> -->
+    <h3 class="sub-heading">
+      Admin Page
+    </h3>
+  </div>
+</header>
 
 <main>
-  <div>
-    <ul>
-        <li><a href="/admin/users">Users</a></li>
-        <li><a href="/admin/books">Books</a></li>
-    </ul>
+  <div class="tabs_parent">
+    <a href="/admin/users"><div class="child_tabs">Users</div></a>
+    <a href="/admin/books"><div class="child_tabs">Books</div></a>
   </div>
 </main>
