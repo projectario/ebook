@@ -1,26 +1,48 @@
-# ebook
+# VideoClub Project
 
-a [Sails v1](https://sailsjs.com) application
+A web MVC project for the PeopleCERT Coding Bootcamp (group project)
 
+### The technologies we used:
 
-### Links
+- [Sails v1](https://sailsjs.com)
+- [sails-mysql](https://www.npmjs.com/package/sails-mysql) (npm)
+- [Sass](https://www.npmjs.com/package/sass)
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs) (npm)
+- [Paypal-Checkout](https://developer.paypal.com/docs/business/develop/design-guidelines/#button-placement)
 
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+### How to Install
 
+1. Clone this repository
+2. Move to project directoty `$ cd ebook`
+3. Install dependences `$ npm install`
+4. On the console type `$ sails lift` to start the server
+5. On your browser visit [localhost:1337](localhost:1337)
 
-### Version info
+### Scope of functionalities
 
-This app was originally generated on Tue Mar 09 2021 20:04:33 GMT+0200 (Eastern European Standard Time) using Sails v1.4.0.
+The website has three different user roles. Guest, member (logged in) and admin.
 
-<!-- Internally, Sails used [`sails-generate@2.0.1`](https://github.com/balderdashy/sails-generate/tree/v2.0.1/lib/core-generators/new). -->
+- The guest can visit the homepage, FAQ page, search for ebooks by title or filter them by their attributes and read ebook details and description. For further access he has to sign up and log in.
 
+- The logged in user is authenticated and encrypted with bcrypt, that way even one with access to the database can't see it.
+  Once the user logs in, he/she can have access a list of ebooks that are available to buy and read. The user can then click on an ebook, and will be redirected to the ebook-detail page that contains the ebook info like, description, price, rating and whether the is best seller or editor's choice. To proceed the user must click the "Add to my list" button and will be redirected to a checkout page, powered by Paypal. After the payment is confirmed the user get access to the "Read Now" button where he can click to go to the ebook reader.
 
+- The admin has full CRUD functionality at ebooks. He can also delete a user's account.
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
+### Illustrations
 
+[![Video-Club-homepage.png](https://i.postimg.cc/4NLJ6JpM/Video-Club-homepage.png)](https://postimg.cc/ykR4BCQX)
+[![Video-Club-movie-detail.png](https://i.postimg.cc/fRHfQq1p/Video-Club-movie-detail.png)](https://postimg.cc/bZttQgy9)
+
+#### Notes
+
+- The database is already filled and contains all needed data.
+- To make a mock payment you should have a paypal sandbox user account.
+
+## Contributors
+
+- [Petros Foutsis](https://github.com/PetrosFou)
+- [Grigoris Palaiohoritis](https://github.com/GrigorisPs)
+- [Anastasia Kounoupi](https://github.com/anastasiakounoupi)
+- [Andreas Koutroulis](https://github.com/AndreasCtrl)
+- [Nektarios Banousi](https://github.com/BanNektarios)

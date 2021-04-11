@@ -35,8 +35,8 @@ module.exports = {
 
         const book = await Book.findOne({ id: this.req.params.id })
 
-        
-        await Book.updateOne({id: this.req.params.id}).set({
+
+        await Book.updateOne({ id: this.req.params.id }).set({
             title: inputs.title,
             author: inputs.author,
             genre: inputs.genre,
@@ -48,7 +48,7 @@ module.exports = {
             isBestSeller: inputs.isBestSeller,
             isEditorChoice: inputs.isEditorChoice,
             movieId: parseInt(inputs.movieId),
-        })
+        }).meta({ skipRecordVerification: true });
 
         throw { redirect: '/admin/books' }
     }

@@ -20,8 +20,7 @@ module.exports = {
     fn: async function () {
         let user = await User.findOne({ id: this.req.session.userId })
 
-        const book = await Book.findOne({ id: this.req.params.id })
-
+        const book = await Book.findOne({ id: this.req.params.id }).meta({ skipRecordVerification: true });
 
         return { user, book }
     }
