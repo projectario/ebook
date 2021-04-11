@@ -31,7 +31,7 @@ The website has three different user roles. Guest, member (logged in) and admin.
 
 ### Illustrations
 
-[![ebook-homepage.png](/images/ebookHomepage.jpg)
+![ebook-homepage.png](/images/ebookHomepage.jpg)
 [![Video-Club-movie-detail.png](https://i.postimg.cc/fRHfQq1p/Video-Club-movie-detail.png)](https://postimg.cc/bZttQgy9)
 
 #### Notes
