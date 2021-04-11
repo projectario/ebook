@@ -24,8 +24,8 @@ The website has three different user roles. Guest, member (logged in) and admin.
 
 - The guest can visit the homepage, FAQ page, search for ebooks by title or filter them by their attributes and read ebook details and description. For further access he has to sign up and log in.
 
-- The logged in user is authenticated and encrypted with bcrypt, that way even one with access to the database can't see it.
-  Once the user logs in, he/she can have access a list of ebooks that are available to buy and read. The user can then click on an ebook, and will be redirected to the ebook-detail page that contains the ebook info like, description, price, rating and whether the is best seller or editor's choice. To proceed the user must click the "Add to my list" button and will be redirected to a checkout page, powered by Paypal. After the payment is confirmed the user get access to the "Read Now" button where he can click to go to the ebook reader.
+- The logged in user is authenticated and encrypted with bcrypt. That way, even one with access to the database, can't see the password.
+  Once the user logs in, he can buy and read the ebook he want. When the user click on an ebook, he gets redirected to the ebook-detail page that contains the ebook info like, description, price, rating and whether or not is best seller or editor's choice. To proceed, the user must click the "Add to my list" button and will be redirected to a checkout page, powered by Paypal. After the payment is confirmed the user get access to the "Read Now" button where he can click to go to the ebook reader.
 
 - The admin has full CRUD functionality at ebooks. He can also delete a user's account.
 
