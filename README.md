@@ -29,11 +29,6 @@ The website has three different user roles. Guest, member (logged in) and admin.
 
 - The admin has full CRUD functionality at ebooks. He can also delete a user's account.
 
-### Illustrations
-
-[![Video-Club-homepage.png](https://i.postimg.cc/4NLJ6JpM/Video-Club-homepage.png)](https://postimg.cc/ykR4BCQX)
-[![Video-Club-movie-detail.png](https://i.postimg.cc/fRHfQq1p/Video-Club-movie-detail.png)](https://postimg.cc/bZttQgy9)
-
 #### Notes
 
 - The database is already filled and contains all needed data.
